@@ -40,7 +40,7 @@
     "@ngrx/store-devtools": "5.0.1"
   },
   "devDependencies": {
-    "@angular/cli": "file:.angular_cli.tgz",
+    "@angular/cli": "file:.angular_cli165.tgz",
     "@angular/compiler-cli": "5.2.2",
     "@angular-devkit/core": "0.0.29",
     "@nrwl/schematics": "0.6.19",
