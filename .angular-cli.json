@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@nrwl/schematics/src/schema.json",
   "project": {
-    "name": "nx-workspace-v2",
-    "npmScope": "nx-workspace-v2",
-    "latestMigration": "20180120-update-prettier"
+    "name": "nrwl-nx-workspace-demo",
+    "npmScope": "nrwl-nx-workspace-demo",
+    "latestMigration": "20180122-add-angular-devkit-core"
   },
   "e2e": {
     "protractor": {
@@ -25,9 +25,12 @@
     "schematics": {
       "collection": "@nrwl/schematics",
       "postGenerate": "npm run format",
-      "newProject": ["app", "lib"]
+      "newProject": [
+        "app",
+        "lib"
+      ]
     },
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   },
   "warnings": {

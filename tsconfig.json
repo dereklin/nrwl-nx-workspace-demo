@@ -16,7 +16,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@nx-workspace-v2/*": [
+      "@nrwl-nx-workspace-demo/*": [
         "libs/*"
       ]
     }
