@@ -5,10 +5,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:app1": "ng serve --app=app1 --open",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "e2e:app1": "npm run e2e -- --app=app1",
+    "e2e:app1:quick": "npm run e2e -- --app=app1 --serve false",
     "apps:affected": "./node_modules/.bin/nx affected apps",
     "build:affected": "./node_modules/.bin/nx affected build",
     "e2e:affected": "./node_modules/.bin/nx affected e2e",
@@ -41,7 +44,7 @@
   },
   "devDependencies": {
     "@angular-devkit/core": "0.0.29",
-    "@angular/cli": "file:.angular_cli165.tgz",
+    "@angular/cli": "1.6.6",
     "@angular/compiler-cli": "5.2.2",
     "@angular/language-service": "5.2.2",
     "@nrwl/schematics": "0.6.19",
