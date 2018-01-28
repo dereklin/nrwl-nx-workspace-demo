@@ -13,13 +13,11 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      binary: 'C:/Program Files (x86)/Google Chrome (Local)/chrome.exe',
+      // binary: 'C:/Program Files (x86)/Google Chrome (Local)/chrome.exe',
       args: [
         '--window-size=1920,1080',
         '--disable-gpu',
-        '--login-user=foo',
-        '--login-password=bar'
-      ] // Basic Authentication
+      ]
     }
   },
   directConnect: true,

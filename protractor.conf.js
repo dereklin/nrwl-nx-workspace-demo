@@ -37,9 +37,7 @@ exports.config = {
       args: [
         '--window-size=1920,1080',
         '--disable-gpu',
-        '--login-user=foo',
-        '--login-password=bar'
-      ] // Basic Authentication
+      ]
     }
   },
   directConnect: false,
