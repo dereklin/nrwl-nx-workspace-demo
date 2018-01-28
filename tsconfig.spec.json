@@ -17,6 +17,8 @@
     "**/*.e2e-spec.ts",
     "**/*.po.ts",
     "node_modules",
-    "tmp"
+    "tmp",
+    "**/features/support/*.ts",
+    "**/*.steps.ts"
   ]
 }

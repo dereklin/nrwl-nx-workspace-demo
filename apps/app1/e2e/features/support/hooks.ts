@@ -17,9 +17,7 @@ BeforeAll({ timeout: 20 * 1000 } /* this timeout is for this hook */, callback =
 });
 
 Before({ timeout: 60 * 1000 } /* this timeout is for this hook */, () => {
-  browser.get('');
-  expect(browser.getTitle()).to.eventually.equal('App1');
-  return browser.wait(until.invisibilityOf(element(by.css('.initialization'))), 5000);
+  return browser.get('');
 });
 
 After(async function(scenario) {

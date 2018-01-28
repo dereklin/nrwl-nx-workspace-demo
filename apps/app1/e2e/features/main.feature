@@ -1,7 +1,5 @@
-Feature: Main Tab Feature
+Feature: Landing Feature
 
-@LandingPageScenario
+@LandingScenario
   Scenario: Show Landing Page
-    Given I am on the main tab
-    When I enter IVV
-    Then I should see the cost analysis chart
+    When I open the site
