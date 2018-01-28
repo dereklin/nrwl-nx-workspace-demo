@@ -5,10 +5,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:app1": "ng serve --app=app1 --open",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "webdriver-update": "webdriver-manager update",
     "e2e": "ng e2e",
+    "e2e:app1": "ng e2e --app=app1",
     "apps:affected": "./node_modules/.bin/nx affected apps",
     "build:affected": "./node_modules/.bin/nx affected build",
     "e2e:affected": "./node_modules/.bin/nx affected e2e",
@@ -18,7 +21,8 @@
     "format": "./node_modules/.bin/nx format write",
     "format:write": "./node_modules/.bin/nx format write",
     "format:check": "./node_modules/.bin/nx format check",
-    "nx-migrate": "./node_modules/.bin/nx migrate"
+    "nx-migrate": "./node_modules/.bin/nx migrate",
+    "setup": "npm install --no-optional"
   },
   "private": true,
   "dependencies": {
@@ -40,7 +44,7 @@
     "@ngrx/store-devtools": "5.0.1"
   },
   "devDependencies": {
-    "@angular/cli": "file:.angular_cli165.tgz",
+    "@angular/cli": "file:angular_cli165.tgz",
     "@angular/compiler-cli": "5.2.2",
     "@angular-devkit/core": "0.0.29",
     "@nrwl/schematics": "0.6.19",
