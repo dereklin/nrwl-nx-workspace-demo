@@ -49,3 +49,6 @@ From basic-setup to cucumber:
     "cucumber": "3.2.1",
     "cucumber-html-reporter": "3.0.4",
     "protractor-cucumber-framework": "4.1.1",
+
+From cucumber to jest:
+  npm i --save-dev -E jest jest-cli jest-html-reporter jest-preset-angular

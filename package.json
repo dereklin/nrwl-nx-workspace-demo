@@ -7,7 +7,8 @@
     "start": "ng serve",
     "start:app1": "ng serve --app=app1 --open",
     "build": "ng build",
-    "test": "ng test",
+    "test": "jest",
+    "test:karma": "ng test",
     "lint": "ng lint",
     "webdriver-update": "webdriver-manager update",
     "e2e": "ng e2e",
@@ -60,6 +61,10 @@
     "cucumber-html-reporter": "3.0.4",
     "jasmine-core": "2.9.1",
     "jasmine-spec-reporter": "4.2.1",
+    "jest": "22.1.4",
+    "jest-cli": "22.1.4",
+    "jest-html-reporter": "0.6.0",
+    "jest-preset-angular": "5.0.0",
     "karma": "2.0.0",
     "karma-chrome-launcher": "2.2.0",
     "karma-cli": "1.0.1",
@@ -72,5 +77,40 @@
     "ts-node": "4.1.0",
     "tslint": "5.9.1",
     "typescript": "2.6.2"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest/setupJest.ts",
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.spec.json"
+      },
+      "__TRANSFORM_HTML__": true
+    },
+    "testResultsProcessor": "./node_modules/jest-html-reporter",
+    "collectCoverageFrom": [
+      "{apps|libs}/**/src/**/*.ts",
+      "!jest/*.ts",
+      "!{apps|libs}/**/src/**/*module.ts",
+      "!apps/**/src/environments/*.ts",
+      "!apps/**/src/main.ts",
+      "!apps/**/src/polyfills.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 60,
+        "functions": 60,
+        "lines": 60,
+        "statements": -20
+      }
+    },
+    "moduleNameMapper": {
+      "@nrwl-nx-workspace-demo/(.*)": "<rootDir>/libs/$1"
+    }
+  },
+  "jest-html-reporter": {
+    "pageTitle": "Your test suite",
+    "outputPath": "coverage/index.html",
+    "includeFailureMsg": false
   }
 }
