@@ -1,9 +1,7 @@
 // This code is not tested and might cause errors
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { _throw } from 'rxjs/observable/throw';
 import { catchError } from 'rxjs/operators';
 
