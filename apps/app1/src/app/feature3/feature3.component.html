@@ -1,6 +1,8 @@
-<p>
-  feature3 works!
-</p>
-<p>
-  <a routerLink="/" routerLinkActive="active" class="nav-link" href="">Home</a>
-</p>
+<app-dropdown
+[config]="dropdownConfig"
+[items]="movieData"
+(openDropdown)="loadMovies()"
+(selectDropdownItem)="clearMovies()"
+(clearDropdown)="clearMovies()"
+>
+</app-dropdown>

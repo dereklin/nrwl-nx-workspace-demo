@@ -13,9 +13,7 @@ describe('TabNavComponent', () => {
       TestBed.configureTestingModule({
         declarations: [TabNavComponent],
         schemas: [NO_ERRORS_SCHEMA],
-        providers: [
-          Dummy1Service
-        ]
+        providers: [Dummy1Service]
       }).compileComponents();
     })
   );

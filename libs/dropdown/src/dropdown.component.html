@@ -1,0 +1,5 @@
+<span class="title" [ngClass]="{'open': items.length}" (click)="open()">{{config.subject}}: {{selectedItem[config.labelKey]}}</span>
+<ul class="list" [ngClass]="{'open': items.length}">
+  <li *ngFor="let item of items" (click)="selectItem(item)">{{item[config.labelKey]}}</li>
+</ul>
+<span class="clear" [ngClass]="{'show': selectedItem[config.labelKey]}" (click)="clear()">Clear</span>

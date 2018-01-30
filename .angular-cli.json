@@ -84,6 +84,12 @@
       "appRoot": ""
     },
     {
+      "name": "dropdown",
+      "root": "libs/dropdown/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
       "name": "dummy1-service",
       "root": "libs/dummy1-service/src",
       "test": "../../../test.js",
@@ -92,6 +98,12 @@
     {
       "name": "http-client-service",
       "root": "libs/http-client-service/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
+      "name": "movie-resolver",
+      "root": "libs/movie-resolver/src",
       "test": "../../../test.js",
       "appRoot": ""
     },

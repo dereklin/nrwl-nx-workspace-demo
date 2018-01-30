@@ -19,6 +19,8 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { APP_BASE_HREF } from '@angular/common';
 import { Dummy1Service } from '@nrwl-nx-workspace-demo/dummy1-service';
 
+import * as fromProviders from './providers';
+
 export const metaReducers: Array<MetaReducer<any>> = !environment.production ? [storeFreeze] : [];
 
 @NgModule({
@@ -33,10 +35,8 @@ export const metaReducers: Array<MetaReducer<any>> = !environment.production ? [
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [
-    { provide: RouterStateSerializer, useClass: CustomSerializer },
-    AppEffects,
-    Dummy1Service
+  providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }, AppEffects, Dummy1Service,
+    ...fromProviders.providers
   ]
 })
 export class AppModule {}
