@@ -84,6 +84,12 @@
       "appRoot": ""
     },
     {
+      "name": "background-color-randomizer",
+      "root": "libs/background-color-randomizer/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
       "name": "dropdown",
       "root": "libs/dropdown/src",
       "test": "../../../test.js",

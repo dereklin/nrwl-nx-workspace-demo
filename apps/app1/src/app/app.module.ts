@@ -35,7 +35,10 @@ export const metaReducers: Array<MetaReducer<any>> = !environment.production ? [
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }, AppEffects, Dummy1Service,
+  providers: [
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
+    AppEffects,
+    Dummy1Service,
     ...fromProviders.providers
   ]
 })
