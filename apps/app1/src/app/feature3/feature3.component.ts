@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BackgroundColorRandomizer } from '@nrwl-nx-workspace-demo';
-import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-feature3',
@@ -15,6 +14,8 @@ export class Feature3Component implements OnInit, AfterViewInit {
   };
   public movieData: any = [];
 
+  @ViewChild('feature3') public feature3: any;
+
   constructor(
     private route: ActivatedRoute,
     private backgroundColorRandomizer: BackgroundColorRandomizer
@@ -27,7 +28,7 @@ export class Feature3Component implements OnInit, AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    this.backgroundColorRandomizer.randomize();
+    this.backgroundColorRandomizer.randomize(this.feature3.nativeElement);
   }
 
   public loadMovies() {

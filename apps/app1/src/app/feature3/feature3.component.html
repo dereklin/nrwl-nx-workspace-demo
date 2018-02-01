@@ -1,8 +1,12 @@
-<app-dropdown
-[config]="dropdownConfig"
-[items]="movieData"
-(openDropdown)="loadMovies()"
-(selectDropdownItem)="clearMovies()"
-(clearDropdown)="clearMovies()"
->
-</app-dropdown>
+<div #feature3>
+  <app-dropdown
+  [config]="dropdownConfig"
+  [items]="movieData"
+  (openDropdown)="loadMovies()"
+  (selectDropdownItem)="clearMovies()"
+  (clearDropdown)="clearMovies()"
+  >
+  </app-dropdown>
+
+  <a [routerLink]="['/']" routerLinkActive="active" class="nav-link">Home</a>
+</div>

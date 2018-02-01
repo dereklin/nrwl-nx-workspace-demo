@@ -13,10 +13,10 @@ export class BackgroundColorRandomizer {
     this.totalTime = totalTime || 10000;
   }
 
-  public randomize() {
-    document.body.style['background-color'] = this.getRandomHexColor();
+  public randomize(el: HTMLElement) {
+    el.style['background-color'] = this.getRandomHexColor();
     const bgInterval = setInterval(() => {
-      document.body.style['background-color'] = this.getRandomHexColor();
+      el.style['background-color'] = this.getRandomHexColor();
     }, this.interval);
     setTimeout(() => {
       clearInterval(bgInterval);
