@@ -24,7 +24,10 @@
     "format": "./node_modules/.bin/nx format write",
     "format:write": "./node_modules/.bin/nx format write",
     "format:check": "./node_modules/.bin/nx format check",
-    "nx-migrate": "./node_modules/.bin/nx migrate"
+    "nx-migrate": "./node_modules/.bin/nx migrate",
+    "nx-migrate:check": "./node_modules/.bin/nx migrate check",
+    "nx-migrate:skip": "./node_modules/.bin/nx migrate skip",
+    "postinstall": "./node_modules/.bin/nx migrate check"
   },
   "private": true,
   "dependencies": {
@@ -54,7 +57,7 @@
     "@angular/compiler-cli": "5.2.3",
     "@angular/language-service": "5.2.3",
     "@nrwl/schematics": "0.7.3",
-    "@schematics/angular": "0.2.0",
+    "@schematics/angular": "0.1.17",
     "@types/jasmine": "2.8.6",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "9.4.0",
@@ -82,7 +85,8 @@
     "rxjs-marbles": "2.3.0",
     "ts-node": "4.1.0",
     "tslint": "5.9.1",
-    "typescript": "2.7.1"
+    "typescript": "2.7.1",
+    "@angular-devkit/schematics": "0.0.52"
   },
   "jest": {
     "preset": "jest-preset-angular",
