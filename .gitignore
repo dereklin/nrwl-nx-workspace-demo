@@ -41,3 +41,4 @@ testem.log
 .DS_Store
 Thumbs.db
 apps/**/e2e-reports
+*.sqlite

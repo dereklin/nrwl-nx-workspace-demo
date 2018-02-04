@@ -1,7 +1,11 @@
-const typeDefinitions = `
+import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
+import mocks from './mocks';
+import resolvers from './resolvers';
+
+const typeDefs = `
 type Query {
-  testString: String
   author(firstName: String, lastName: String): Author
+  allAuthors: [Author]
   getFortuneCookie: String # we'll use this later
 }
 
@@ -22,9 +26,11 @@ type Post {
 
 
 
-schema {
-  query: Query
-}
 `;
 
-export default [typeDefinitions];
+// const schema = makeExecutableSchema({ typeDefs });
+const schema = makeExecutableSchema({ typeDefs, resolvers });
+
+// addMockFunctionsToSchema({ schema, mocks });
+
+export default schema;
