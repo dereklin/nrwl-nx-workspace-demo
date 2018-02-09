@@ -6,8 +6,12 @@ export class BackgroundColorRandomizer {
   private usedBgColors = {};
 
   constructor(
-    @Inject(INTERVAL) @Optional() private interval?: number,
-    @Inject(TOTALTIME) @Optional() private totalTime?: number
+    @Inject(INTERVAL)
+    @Optional()
+    private interval?: number,
+    @Inject(TOTALTIME)
+    @Optional()
+    private totalTime?: number
   ) {
     this.interval = interval || 1000;
     this.totalTime = totalTime || 10000;

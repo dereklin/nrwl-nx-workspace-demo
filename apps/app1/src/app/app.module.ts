@@ -1,26 +1,20 @@
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NxModule } from '@nrwl/nx';
-import { RouterModule } from '@angular/router';
-import { StoreModule, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { appReducer } from './+state/app.reducer';
-import { appInitialState } from './+state/app.init';
-import { AppEffects } from './+state/app.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { MetaReducer, StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NxModule } from '@nrwl/nx';
+import { storeFreeze } from 'ngrx-store-freeze';
+
 import { environment } from '../environments/environment';
-import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
+import { AppEffects } from './+state/app.effects';
 import { AppRoutingModule } from './app-routing.module';
-import { reducers, CustomSerializer } from './store';
+import { AppComponent } from './app.component';
+import * as fromProviders from './app.providers';
+import { reducers } from './store';
 
 // not used in production
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { storeFreeze } from 'ngrx-store-freeze';
-import { APP_BASE_HREF } from '@angular/common';
-import { Dummy1Service } from '@nrwl-nx-workspace-demo/dummy1-service';
-
-import * as fromProviders from './providers';
-
 export const metaReducers: Array<MetaReducer<any>> = !environment.production ? [storeFreeze] : [];
 
 @NgModule({
@@ -35,11 +29,6 @@ export const metaReducers: Array<MetaReducer<any>> = !environment.production ? [
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [
-    { provide: RouterStateSerializer, useClass: CustomSerializer },
-    AppEffects,
-    Dummy1Service,
-    ...fromProviders.providers
-  ]
+  providers: [...fromProviders.providers]
 })
 export class AppModule {}

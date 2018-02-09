@@ -12,15 +12,10 @@ describe('Feature3Component', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [
-          DropdownModule,
-          RouterTestingModule
-        ],
+        imports: [DropdownModule, RouterTestingModule],
         declarations: [Feature3Component],
         schemas: [NO_ERRORS_SCHEMA],
-        providers: [
-          BackgroundColorRandomizer
-        ]
+        providers: [BackgroundColorRandomizer]
       }).compileComponents();
     })
   );

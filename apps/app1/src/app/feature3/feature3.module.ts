@@ -6,15 +6,9 @@ import { BackgroundColorRandomizer } from '@nrwl-nx-workspace-demo';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DropdownModule,
-    RouterModule
-  ],
+  imports: [CommonModule, DropdownModule, RouterModule],
   declarations: [Feature3Component],
   exports: [],
-  providers: [
-    BackgroundColorRandomizer
-  ]
+  providers: [BackgroundColorRandomizer]
 })
 export class Feature3Module {}
