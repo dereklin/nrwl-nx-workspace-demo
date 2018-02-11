@@ -21,6 +21,7 @@ https://engine.apollographql.com/account/gh.dereklin
 
 */
 import express from 'express';
+import cors from 'cors';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import bodyParser from 'body-parser';
 import schema from './data/schema';
@@ -53,7 +54,7 @@ const graphQLServer = express();
 graphQLServer.use(engine.expressMiddleware());
 graphQLServer.use(compression());
 
-graphQLServer.use('/graphql', bodyParser.json(), graphqlExpress(
+graphQLServer.use('/graphql', cors(), bodyParser.json(), graphqlExpress(
   {
     schema,
     tracing: true,

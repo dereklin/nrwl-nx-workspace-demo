@@ -23,6 +23,7 @@ const routes: Routes = [
       { path: 'f1', component: Feature1Component },
       { path: 'f2', component: Feature2Component },
       { path: 'lazy', loadChildren: '../lazy/lazy.module#LazyModule' },
+      { path: 'apollo', loadChildren: '@nrwl-nx-workspace-demo/app-apollo/src/app-apollo.module#AppApolloModule' },
       { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/not-found.module#NotFoundModule' },
       {
         path: '**',

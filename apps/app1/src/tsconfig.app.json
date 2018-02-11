@@ -8,7 +8,9 @@
     "**/*.ts",
     /* add all lazy-loaded libraries here: "../../../libs/my-lib/index.ts" */
     "../../../libs/not-found/index.ts"
-  ],
+  
+    , "../../../libs/app-apollo/index.ts"
+],
   "exclude": [
     "**/*.spec.ts"
   ]

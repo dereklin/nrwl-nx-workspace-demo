@@ -72,6 +72,12 @@
       }
     },
     {
+      "name": "app-apollo",
+      "root": "libs/app-apollo/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
       "name": "app-interfaces",
       "root": "libs/app-interfaces/src",
       "test": "../../../test.js",
