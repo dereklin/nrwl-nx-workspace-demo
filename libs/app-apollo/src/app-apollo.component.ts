@@ -12,26 +12,25 @@ import { map } from 'rxjs/operators';
 export class AppApolloComponent implements OnInit {
   public author$: Observable<any>;
 
-  constructor(private apollo: Apollo) {
-  }
+  constructor(private apollo: Apollo) {}
 
   ngOnInit() {
     const query = gql`
-    query {
-      author(firstName:"Edmond", lastName: "Jones"){
-        firstName
-        lastName
-        posts{
-          title
-          views
+      query {
+        author(firstName: "Edmond", lastName: "Jones") {
+          firstName
+          lastName
+          posts {
+            title
+            views
+          }
         }
       }
-    }`;
-    this.author$ = this.apollo.query({query}).pipe(
-      map((obj) => {
+    `;
+    this.author$ = this.apollo.query({ query }).pipe(
+      map(obj => {
         return obj.data;
       })
     );
-
   }
 }

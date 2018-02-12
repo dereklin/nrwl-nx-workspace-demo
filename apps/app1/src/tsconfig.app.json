@@ -10,6 +10,10 @@
     "../../../libs/not-found/index.ts"
   
     , "../../../libs/app-apollo/index.ts"
+
+    , "../../../libs/apollo-game/index.ts"
+
+    , "../../../libs/learn-graphql/index.ts"
 ],
   "exclude": [
     "**/*.spec.ts"

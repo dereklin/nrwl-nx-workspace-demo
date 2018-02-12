@@ -15,6 +15,10 @@
     /* add all lazy-loaded libraries here: "../../../libs/my-lib/index.ts" */
   
     , "../../../libs/app-apollo/index.ts"
+
+    , "../../../libs/apollo-game/index.ts"
+
+    , "../../../libs/learn-graphql/index.ts"
 ],
   "exclude": [
     "**/*.spec.ts"

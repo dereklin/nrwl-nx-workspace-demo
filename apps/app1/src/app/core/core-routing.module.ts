@@ -24,6 +24,11 @@ const routes: Routes = [
       { path: 'f2', component: Feature2Component },
       { path: 'lazy', loadChildren: '../lazy/lazy.module#LazyModule' },
       { path: 'apollo', loadChildren: '@nrwl-nx-workspace-demo/app-apollo/src/app-apollo.module#AppApolloModule' },
+      { path: 'game', loadChildren: '@nrwl-nx-workspace-demo/apollo-game/src/apollo-game.module#ApolloGameModule' },
+      {
+        path: 'learn-graphql',
+        loadChildren: '@nrwl-nx-workspace-demo/learn-graphql/src/learn-graphql.module#LearnGraphqlModule'
+      },
       { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/not-found.module#NotFoundModule' },
       {
         path: '**',

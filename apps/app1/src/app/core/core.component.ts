@@ -17,7 +17,9 @@ export class CoreComponent implements OnInit {
       { value: `${COREROUTEBASESPACE}f1`, display: 'Feature 1' },
       { value: `${COREROUTEBASESPACE}f2`, display: 'Feature 2' },
       { value: 'f3', display: 'Feature 3' },
-      { value: `${COREROUTEBASESPACE}apollo`, display: 'Apollo' }
+      { value: `${COREROUTEBASESPACE}apollo`, display: 'Apollo' },
+      { value: `${COREROUTEBASESPACE}game`, display: 'Apollo Game' },
+      { value: `${COREROUTEBASESPACE}learn-graphql`, display: 'Learn Graphql' }
     ];
   }
 

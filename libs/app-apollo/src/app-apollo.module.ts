@@ -10,9 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      {path: '', pathMatch: 'full', component: AppApolloComponent}
-    ]),
+    RouterModule.forChild([{ path: '', pathMatch: 'full', component: AppApolloComponent }]),
     HttpClientModule,
     HttpLinkModule,
     ApolloModule
@@ -20,10 +18,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
   declarations: [AppApolloComponent]
 })
 export class AppApolloModule {
-  constructor(
-    apollo: Apollo,
-    httpLink: HttpLink
-  ) {
+  constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
       link: httpLink.create({ uri: 'http://localhost:5000/graphql' }),
       cache: new InMemoryCache()

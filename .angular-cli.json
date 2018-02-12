@@ -62,6 +62,7 @@
       "prefix": "app",
       "styles": [
         "../../../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../../../node_modules/tachyons/css/tachyons.css",
         "styles.css"
       ],
       "scripts": [],
@@ -70,6 +71,12 @@
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
+    },
+    {
+      "name": "apollo-game",
+      "root": "libs/apollo-game/src",
+      "test": "../../../test.js",
+      "appRoot": ""
     },
     {
       "name": "app-apollo",
@@ -110,6 +117,12 @@
     {
       "name": "http-client-service",
       "root": "libs/http-client-service/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
+      "name": "learn-graphql",
+      "root": "libs/learn-graphql/src",
       "test": "../../../test.js",
       "appRoot": ""
     },

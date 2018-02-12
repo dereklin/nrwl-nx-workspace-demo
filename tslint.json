@@ -100,7 +100,9 @@
       true,
       {
         "lazyLoad": [
-          "app-apollo"
+          "app-apollo",
+          "apollo-game",
+          "learn-graphql"
         ],
         "allow": []
       }

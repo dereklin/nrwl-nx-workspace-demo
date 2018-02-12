@@ -1,0 +1,24 @@
+<div className="pa4 flex flex-column items-center">
+  <app-success *ngIf="created"></app-success>
+  <app-error *ngIf="error"></app-error>
+  <div className="flex justify-center">
+    <app-team-card
+      name="'Team A'"
+      (onChangeName)="updateGame($event)"
+      goals="teamAScore"
+      (onGoal)="updateGame()"
+    ></app-team-card>
+    <app-team-card
+      name="'Team B'"
+      (onChangeName)="updateGame($event)"
+      goals="teamAScore"
+      (onGoal)="updateGame()"
+    ></app-team-card>
+  </div>
+  <button
+    (click)="createGame()"
+    className="f6 link dim br3 ph3 pv2 mb2 dib white bg-blue no-outline"
+  >
+    Game Finished
+  </button>
+</div>
