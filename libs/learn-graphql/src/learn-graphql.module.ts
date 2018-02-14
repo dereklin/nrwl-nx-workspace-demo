@@ -19,17 +19,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { LinkItemComponent } from './components/link-item/link-item.component';
 import { LinkListComponent } from './components/link-list/link-list.component';
 import { CreateLinkComponent } from './components/create-link/create-link.component';
+import { LoginComponent } from './components/login/login.component';
+import { LearnGraphqlRoutingModule } from './learn-graphql-routing.module';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: '', pathMatch: 'full', component: LearnGraphqlComponent }]),
+    // RouterModule.forChild([{ path: '', pathMatch: 'full', component: LearnGraphqlComponent }]),
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
-    FormsModule
+    FormsModule,
+    LearnGraphqlRoutingModule
   ],
-  declarations: [LearnGraphqlComponent, LinkItemComponent, LinkListComponent, CreateLinkComponent]
+  declarations: [
+    LearnGraphqlComponent,
+    LinkItemComponent,
+    LinkListComponent,
+    CreateLinkComponent,
+    LoginComponent,
+    HeaderComponent
+  ]
 })
 export class LearnGraphqlModule {
   constructor(private apollo: Apollo, private httpLink: HttpLink) {
