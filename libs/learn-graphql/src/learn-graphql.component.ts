@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-learn-graphql',
@@ -7,12 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./learn-graphql.component.scss']
 })
 export class LearnGraphqlComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {
-    const temp = this.activatedRoute;
-    this.activatedRoute.url.subscribe(url => {
-      console.log(url);
-    });
+  public title = 'app';
+  // 1
+  constructor(private authService: AuthService) {
+
   }
 
-  public ngOnInit() {}
+  public ngOnInit(): void {
+    // 2
+    this.authService.autoLogin();
+  }
 }

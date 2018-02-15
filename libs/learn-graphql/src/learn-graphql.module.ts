@@ -20,6 +20,7 @@ import { CreateLinkComponent } from './components/create-link/create-link.compon
 import { LoginComponent } from './components/login/login.component';
 import { LearnGraphqlRoutingModule } from './learn-graphql-routing.module';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, ApolloModule, HttpLinkModule, FormsModule, LearnGraphqlRoutingModule],
@@ -30,6 +31,9 @@ import { HeaderComponent } from './components/header/header.component';
     CreateLinkComponent,
     LoginComponent,
     HeaderComponent
+  ],
+  providers: [
+    AuthService
   ]
 })
 export class LearnGraphqlModule {

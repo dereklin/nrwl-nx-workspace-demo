@@ -3,3 +3,9 @@ export interface Link {
   description: string;
   url: string;
 }
+
+export interface User {
+  email: string;
+  password: string;
+  name: string;
+}

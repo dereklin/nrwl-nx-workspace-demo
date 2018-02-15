@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  public logged: boolean = false;
 
-  public ngOnInit() {}
+  constructor(private authService: AuthService) {}
+
+  public ngOnInit() {
+    this.authService.isAuthenticated.pipe(distinctUntilChanged()).subscribe(isAuthenticated => {
+      this.logged = isAuthenticated;
+    });
+  }
+
+  public logout() {
+    this.authService.logout();
+  }
 }
