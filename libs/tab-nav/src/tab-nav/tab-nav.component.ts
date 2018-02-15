@@ -14,7 +14,7 @@ export class TabNavComponent implements OnInit {
 
   constructor(private dummy1Service: Dummy1Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log(this.dummy1Service.sayHello('test'));
   }
 }

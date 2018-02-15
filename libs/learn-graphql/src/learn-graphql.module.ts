@@ -4,8 +4,6 @@ Simple API:        https://api.graph.cool/simple/v1/cjdjgmi0u2cye0129kgw4a1ug
 Relay API:         https://api.graph.cool/relay/v1/cjdjgmi0u2cye0129kgw4a1ug
 Subscriptions API: wss://subscriptions.graph.cool/v1/cjdjgmi0u2cye0129kgw4a1ug
 
-
-
 */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

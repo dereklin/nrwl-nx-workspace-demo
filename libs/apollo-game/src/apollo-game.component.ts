@@ -19,7 +19,7 @@ export class ApolloGameComponent implements OnInit {
 
   constructor(private apollo: Apollo) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     const query = gql`
       query {
         allGames {

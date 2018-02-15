@@ -8,20 +8,20 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  login = true; // switch between Login and SignUp
-  email = '';
-  password = '';
-  name = '';
+  public login = true; // switch between Login and SignUp
+  public email = '';
+  public password = '';
+  public name = '';
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  confirm() {
+  public confirm() {
     // ... you'll implement this in a bit
   }
 
-  saveUserData(id, token) {
+  public saveUserData(id, token) {
     localStorage.setItem(GC_USER_ID, id);
     localStorage.setItem(GC_AUTH_TOKEN, token);
     this.authService.setUserId(id);

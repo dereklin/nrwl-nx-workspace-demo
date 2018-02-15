@@ -14,7 +14,7 @@ export class AppApolloComponent implements OnInit {
 
   constructor(private apollo: Apollo) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     const query = gql`
       query {
         author(firstName: "Edmond", lastName: "Jones") {

@@ -6,13 +6,13 @@ import { Link } from '../../types';
   styleUrls: ['./link-item.component.scss']
 })
 export class LinkItemComponent implements OnInit {
-  @Input() link: Link;
+  @Input() public link: Link;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  voteForLink = async () => {
+  public voteForLink = async () => {
     // ... you'll implement this in chapter 6
   };
 }

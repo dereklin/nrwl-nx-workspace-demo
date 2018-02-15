@@ -14,5 +14,5 @@ export class LearnGraphqlComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

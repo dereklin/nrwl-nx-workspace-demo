@@ -33,7 +33,6 @@ export const CREATE_LINK_MUTATION = gql`
   }
 `;
 
-//3
 export interface CreateLinkMutationResponse {
   createLink: Link;
   loading: boolean;

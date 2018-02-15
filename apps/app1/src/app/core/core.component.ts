@@ -23,5 +23,5 @@ export class CoreComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

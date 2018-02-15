@@ -17,7 +17,7 @@ export class LinkListComponent implements OnInit {
 
   constructor(private apollo: Apollo, private cdf: ChangeDetectorRef) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     // 4
     this.apollo
       .watchQuery({

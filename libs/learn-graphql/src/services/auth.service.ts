@@ -19,20 +19,20 @@ export class AuthService {
     return this._isAuthenticated.asObservable();
   }
   // 5
-  saveUserData(id: string, token: string) {
+  public saveUserData(id: string, token: string) {
     localStorage.setItem(GC_USER_ID, id);
     localStorage.setItem(GC_AUTH_TOKEN, token);
     this.setUserId(id);
   }
 
   // 6
-  setUserId(id: string) {
+  public setUserId(id: string) {
     this.userId = id;
 
     this._isAuthenticated.next(true);
   }
   // 7
-  logout() {
+  public logout() {
     localStorage.removeItem(GC_USER_ID);
     localStorage.removeItem(GC_AUTH_TOKEN);
     this.userId = null;
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   // 8
-  autoLogin() {
+  public autoLogin() {
     const id = localStorage.getItem(GC_USER_ID);
 
     if (id) {

@@ -9,14 +9,14 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./create-link.component.scss']
 })
 export class CreateLinkComponent implements OnInit {
-  description = '';
-  url = '';
+  public description = '';
+  public url = '';
 
   constructor(private apollo: Apollo, private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  createLink() {
+  public createLink() {
     this.apollo
       .mutate({
         mutation: CREATE_LINK_MUTATION,
