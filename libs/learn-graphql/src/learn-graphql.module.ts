@@ -26,7 +26,6 @@ import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   imports: [
     CommonModule,
-    // RouterModule.forChild([{ path: '', pathMatch: 'full', component: LearnGraphqlComponent }]),
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
