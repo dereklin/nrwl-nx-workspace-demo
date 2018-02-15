@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class LearnGraphqlComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {
     const temp = this.activatedRoute;
-    this.activatedRoute.url.subscribe((url) => {
+    this.activatedRoute.url.subscribe(url => {
       console.log(url);
-    })
+    });
   }
 
   ngOnInit() {}

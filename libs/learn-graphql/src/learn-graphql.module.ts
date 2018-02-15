@@ -24,14 +24,7 @@ import { LearnGraphqlRoutingModule } from './learn-graphql-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ApolloModule,
-    HttpLinkModule,
-    FormsModule,
-    LearnGraphqlRoutingModule
-  ],
+  imports: [CommonModule, HttpClientModule, ApolloModule, HttpLinkModule, FormsModule, LearnGraphqlRoutingModule],
   declarations: [
     LearnGraphqlComponent,
     LinkItemComponent,
