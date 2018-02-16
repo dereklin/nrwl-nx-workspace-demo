@@ -33,9 +33,7 @@ import { GC_AUTH_TOKEN } from './constants';
     LoginComponent,
     HeaderComponent
   ],
-  providers: [
-    AuthService
-  ]
+  providers: [AuthService]
 })
 export class LearnGraphqlModule {
   constructor(private apollo: Apollo, private httpLink: HttpLink) {

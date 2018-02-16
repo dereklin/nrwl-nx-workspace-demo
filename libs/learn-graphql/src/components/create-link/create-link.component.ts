@@ -45,12 +45,15 @@ export class CreateLinkComponent implements OnInit {
           store.writeQuery({ query: ALL_LINKS_QUERY, data });
         }
       })
-      .subscribe(response => {
-        this.router.navigate(['..'], { relativeTo: this.route });
-      }, error => {
-        console.error(error);
-        this.description = newDescription;
-        this.url = newUrl;
-      });
+      .subscribe(
+        response => {
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        error => {
+          console.error(error);
+          this.description = newDescription;
+          this.url = newUrl;
+        }
+      );
   }
 }

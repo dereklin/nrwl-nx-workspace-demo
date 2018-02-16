@@ -10,9 +10,7 @@ import { AuthService } from './services/auth.service';
 export class LearnGraphqlComponent implements OnInit {
   public title = 'app';
   // 1
-  constructor(private authService: AuthService) {
-
-  }
+  constructor(private authService: AuthService) {}
 
   public ngOnInit(): void {
     // 2

@@ -43,7 +43,7 @@ export class LinkListComponent implements OnInit, OnDestroy {
     this.subscriptions = [...this.subscriptions, querySubscription];
   }
 
-  public updateStoreAfterVote (store, createVote, linkId) {
+  public updateStoreAfterVote(store, createVote, linkId) {
     // 1
     const data = store.readQuery({
       query: ALL_LINKS_QUERY
