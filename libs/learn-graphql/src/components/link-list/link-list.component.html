@@ -1,4 +1,9 @@
 <h4 *ngIf="loading">Loading...</h4>
-<app-link-item *ngFor="let link of allLinks"
-          [link]="link">
+<app-link-item 
+*ngFor="let link of allLinks;let index=index"
+          [link]="link"
+          [index]="index"
+  [isAuthenticated]="logged"
+  [updateStoreAfterVote]="updateStoreAfterVote"
+          >
 </app-link-item>

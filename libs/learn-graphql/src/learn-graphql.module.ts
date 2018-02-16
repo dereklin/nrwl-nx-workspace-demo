@@ -13,7 +13,7 @@ import { LearnGraphqlComponent } from './learn-graphql.component';
 import { Apollo, ApolloModule } from 'apollo-angular';
 import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { LinkItemComponent } from './components/link-item/link-item.component';
 import { LinkListComponent } from './components/link-list/link-list.component';
 import { CreateLinkComponent } from './components/create-link/create-link.component';
@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LearnGraphqlRoutingModule } from './learn-graphql-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
+import { GC_AUTH_TOKEN } from './constants';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, ApolloModule, HttpLinkModule, FormsModule, LearnGraphqlRoutingModule],
@@ -38,8 +39,12 @@ import { AuthService } from './services/auth.service';
 })
 export class LearnGraphqlModule {
   constructor(private apollo: Apollo, private httpLink: HttpLink) {
+    const token = localStorage.getItem(GC_AUTH_TOKEN);
+    const authorization = token ? `Bearer ${token}` : null;
+    const headers = new HttpHeaders();
+    headers.append('Authorization', authorization);
     const uri = 'https://api.graph.cool/simple/v1/cjdjgmi0u2cye0129kgw4a1ug';
-    const http = httpLink.create({ uri });
+    const http = httpLink.create({ uri, headers });
     apollo.create({
       link: http,
       cache: new InMemoryCache()
