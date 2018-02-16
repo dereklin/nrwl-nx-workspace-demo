@@ -22,6 +22,7 @@ import { LearnGraphqlRoutingModule } from './learn-graphql-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { GC_AUTH_TOKEN } from './constants';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, ApolloModule, HttpLinkModule, FormsModule, LearnGraphqlRoutingModule],
@@ -31,7 +32,8 @@ import { GC_AUTH_TOKEN } from './constants';
     LinkListComponent,
     CreateLinkComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent
   ],
   providers: [AuthService]
 })
