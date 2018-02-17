@@ -3,8 +3,8 @@ https://www.howtographql.com/angular-apollo/2-queries-loading-links/
 */
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Link } from '../../types';
-import { ALL_LINKS_QUERY, AllLinkQueryResponse } from '../../graphql';
-import { Apollo } from 'apollo-angular';
+import { ALL_LINKS_QUERY, AllLinkQueryResponse, NEW_LINKS_SUBSCRIPTION } from '../../graphql';
+import { Apollo, QueryRef } from 'apollo-angular';
 import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from '../../services/auth.service';
 import { distinctUntilChanged } from 'rxjs/operators';
@@ -30,16 +30,42 @@ export class LinkListComponent implements OnInit, OnDestroy {
     });
 
     // 4
-    const querySubscription = this.apollo
-      .watchQuery({
-        query: ALL_LINKS_QUERY
-      })
-      .valueChanges.subscribe((response: any) => {
-        // 5
-        this.allLinks = response.data.allLinks;
-        this.loading = response.loading;
-        this.cdf.markForCheck();
+    // const querySubscription = this.apollo
+    //   .watchQuery({
+    //     query: ALL_LINKS_QUERY
+    //   })
+    //   .valueChanges.subscribe((response: any) => {
+    //     // 5
+    //     this.allLinks = response.data.allLinks;
+    //     this.loading = response.loading;
+    //     this.cdf.markForCheck();
+    //   });
+    // this.subscriptions = [...this.subscriptions, querySubscription];
+    const allLinkQuery: QueryRef<any> = this.apollo.watchQuery({
+      query: ALL_LINKS_QUERY
+    });
+
+    allLinkQuery
+      .subscribeToMore({
+        document: NEW_LINKS_SUBSCRIPTION,
+        updateQuery: (previous: any, { subscriptionData }) => {
+          const newAllLinks = [
+            subscriptionData.data.Link.node,
+            ...previous.allLinks
+          ];
+          return {
+            ...previous,
+            allLinks: newAllLinks
+          };
+        }
       });
+
+    const querySubscription = allLinkQuery.valueChanges.subscribe(response => {
+      this.allLinks = response.data.allLinks;
+      this.loading = response.loading;
+      this.cdf.markForCheck();
+    });
+
     this.subscriptions = [...this.subscriptions, querySubscription];
   }
 

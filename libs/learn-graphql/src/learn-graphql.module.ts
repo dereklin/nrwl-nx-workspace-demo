@@ -23,6 +23,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { GC_AUTH_TOKEN } from './constants';
 import { SearchComponent } from './components/search/search.component';
+import { getOperationAST } from 'graphql';
+import { WebSocketLink } from 'apollo-link-ws';
+import { ApolloLink } from 'apollo-link';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, ApolloModule, HttpLinkModule, FormsModule, LearnGraphqlRoutingModule],
@@ -45,8 +48,30 @@ export class LearnGraphqlModule {
     headers.append('Authorization', authorization);
     const uri = 'https://api.graph.cool/simple/v1/cjdjgmi0u2cye0129kgw4a1ug';
     const http = httpLink.create({ uri, headers });
+
+    // 1
+    const ws = new WebSocketLink({
+      uri: `wss://subscriptions.graph.cool/v1/cjdjgmi0u2cye0129kgw4a1ug`,
+      options: {
+        reconnect: true,
+        connectionParams: {
+          authToken: localStorage.getItem(GC_AUTH_TOKEN),
+        }
+      }
+    });
+
     apollo.create({
-      link: http,
+      // 2
+      link: ApolloLink.split(
+        // 3
+        operation => {
+          const operationAST = getOperationAST(operation.query, operation.operationName);
+          return !!operationAST && operationAST.operation === 'subscription';
+        },
+        ws,
+        http,
+      ),
+      // link: http,
       cache: new InMemoryCache()
     });
   }
