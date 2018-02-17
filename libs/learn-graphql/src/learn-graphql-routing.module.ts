@@ -5,6 +5,7 @@ import { CreateLinkComponent } from './components/create-link/create-link.compon
 import { LinkListComponent } from './components/link-list/link-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { LearnGraphqlComponent } from './learn-graphql.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
       {
         path: 'create',
         component: CreateLinkComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'search',
+        component: SearchComponent,
         pathMatch: 'full'
       },
       {

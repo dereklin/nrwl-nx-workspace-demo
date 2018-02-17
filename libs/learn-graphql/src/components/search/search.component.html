@@ -1,3 +1,11 @@
-<p>
-  search works!
-</p>
+<div>
+  Search
+  <!-- 1 -->
+  <input type="text" [(ngModel)]="searchText" (ngModelChange)="executeSearch()">
+</div>
+<app-link-item
+  *ngFor="let link of allLinks;let index=index"
+  [link]="link"
+  [index]="index"
+  [isAuthenticated]="logged">
+</app-link-item>
