@@ -54,6 +54,7 @@ export class LearnGraphqlModule {
       uri: `wss://subscriptions.graph.cool/v1/cjdjgmi0u2cye0129kgw4a1ug`,
       options: {
         reconnect: true,
+        timeout: 30000,
         connectionParams: {
           authToken: localStorage.getItem(GC_AUTH_TOKEN),
         }

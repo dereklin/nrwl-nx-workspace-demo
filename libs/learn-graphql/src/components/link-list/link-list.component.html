@@ -3,7 +3,7 @@
 *ngFor="let link of allLinks;let index=index"
           [link]="link"
           [index]="index"
-  [isAuthenticated]="logged"
+  [isAuthenticated]="isLoggedIn$ | async"
   [updateStoreAfterVote]="updateStoreAfterVote"
           >
 </app-link-item>

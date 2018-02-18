@@ -1,46 +1,35 @@
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Apollo, QueryRef } from 'apollo-angular';
+import { Observable } from 'rxjs/Observable';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { Subscription } from 'rxjs/Subscription';
+
+import { ALL_LINKS_QUERY, NEW_LINKS_SUBSCRIPTION, NEW_VOTES_SUBSCRIPTION } from '../../graphql';
+import { AuthService } from '../../services/auth.service';
+import { Link } from '../../types';
+
 /*
 https://www.howtographql.com/angular-apollo/2-queries-loading-links/
 */
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { Link } from '../../types';
-import { ALL_LINKS_QUERY, AllLinkQueryResponse, NEW_LINKS_SUBSCRIPTION, NEW_VOTES_SUBSCRIPTION } from '../../graphql';
-import { Apollo, QueryRef } from 'apollo-angular';
-import { Subscription } from 'rxjs/Subscription';
-import { AuthService } from '../../services/auth.service';
-import { distinctUntilChanged } from 'rxjs/operators';
-
 @Component({
   selector: 'app-link-list',
   templateUrl: './link-list.component.html',
-  styleUrls: ['./link-list.component.scss']
+  styleUrls: ['./link-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LinkListComponent implements OnInit, OnDestroy {
   public allLinks: Link[] = [];
   public loading = true;
 
-  public logged: boolean = false;
+  public isLoggedIn$: Observable<boolean>;
 
   public subscriptions: Subscription[] = [];
 
   constructor(private apollo: Apollo, private cdf: ChangeDetectorRef, private authService: AuthService) {}
 
   public ngOnInit() {
-    this.authService.isAuthenticated.pipe(distinctUntilChanged()).subscribe(isAuthenticated => {
-      this.logged = isAuthenticated;
-    });
+    this.isLoggedIn$ = this.authService.isAuthenticated.pipe(distinctUntilChanged());
 
-    // 4
-    // const querySubscription = this.apollo
-    //   .watchQuery({
-    //     query: ALL_LINKS_QUERY
-    //   })
-    //   .valueChanges.subscribe((response: any) => {
-    //     // 5
-    //     this.allLinks = response.data.allLinks;
-    //     this.loading = response.loading;
-    //     this.cdf.markForCheck();
-    //   });
-    // this.subscriptions = [...this.subscriptions, querySubscription];
     const allLinkQuery: QueryRef<any> = this.apollo.watchQuery({
       query: ALL_LINKS_QUERY
     });
