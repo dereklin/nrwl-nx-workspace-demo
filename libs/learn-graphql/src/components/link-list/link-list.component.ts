@@ -3,7 +3,7 @@ https://www.howtographql.com/angular-apollo/2-queries-loading-links/
 */
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Link } from '../../types';
-import { ALL_LINKS_QUERY, AllLinkQueryResponse, NEW_LINKS_SUBSCRIPTION } from '../../graphql';
+import { ALL_LINKS_QUERY, AllLinkQueryResponse, NEW_LINKS_SUBSCRIPTION, NEW_VOTES_SUBSCRIPTION } from '../../graphql';
 import { Apollo, QueryRef } from 'apollo-angular';
 import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from '../../services/auth.service';
@@ -59,6 +59,23 @@ export class LinkListComponent implements OnInit, OnDestroy {
           };
         }
       });
+
+    allLinkQuery
+      .subscribeToMore({
+        document: NEW_VOTES_SUBSCRIPTION,
+        updateQuery: (previous: any, { subscriptionData }) => {
+          const votedLinkIndex = previous.allLinks.findIndex(myLink =>
+            myLink.id === subscriptionData.data.Vote.node.link.id);
+          const link = subscriptionData.data.Vote.node.link;
+          const newAllLinks = previous.allLinks.slice();
+          newAllLinks[votedLinkIndex] = link;
+          return {
+            ...previous,
+            allLinks: newAllLinks
+          };
+        }
+      })
+      ;
 
     const querySubscription = allLinkQuery.valueChanges.subscribe(response => {
       this.allLinks = response.data.allLinks;
