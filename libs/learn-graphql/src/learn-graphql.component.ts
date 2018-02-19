@@ -8,12 +8,9 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./learn-graphql.component.scss']
 })
 export class LearnGraphqlComponent implements OnInit {
-  public title = 'app';
-  // 1
   constructor(private authService: AuthService) {}
 
   public ngOnInit(): void {
-    // 2
     this.authService.autoLogin();
   }
 }
