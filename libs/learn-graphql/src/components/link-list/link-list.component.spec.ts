@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LinkListComponent } from './link-list.component';
+import { AuthService } from '../../services/auth.service';
+import { Apollo } from 'apollo-angular';
+import { ChangeDetectorRef } from '@angular/core';
 
 describe('LinkListComponent', () => {
   let component: LinkListComponent;
@@ -9,7 +12,12 @@ describe('LinkListComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [LinkListComponent]
+        declarations: [LinkListComponent],
+        providers: [
+          {provide: AuthService, useValue: {}},
+          {provide: Apollo, useValue: {}},
+          {provide: ChangeDetectorRef, useValue: {}}
+        ]
       }).compileComponents();
     })
   );

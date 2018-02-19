@@ -13,7 +13,6 @@ export class CoreComponent implements OnInit {
 
   constructor() {
     this.tabs = [
-      { value: ``, display: 'Home' },
       { value: `${COREROUTEBASESPACE}f1`, display: 'Feature 1' },
       { value: `${COREROUTEBASESPACE}f2`, display: 'Feature 2' },
       { value: 'f3', display: 'Feature 3' },
