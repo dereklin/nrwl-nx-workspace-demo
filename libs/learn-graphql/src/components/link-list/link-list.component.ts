@@ -34,37 +34,32 @@ export class LinkListComponent implements OnInit, OnDestroy {
       query: ALL_LINKS_QUERY
     });
 
-    allLinkQuery
-      .subscribeToMore({
-        document: NEW_LINKS_SUBSCRIPTION,
-        updateQuery: (previous: any, { subscriptionData }) => {
-          const newAllLinks = [
-            subscriptionData.data.Link.node,
-            ...previous.allLinks
-          ];
-          return {
-            ...previous,
-            allLinks: newAllLinks
-          };
-        }
-      });
+    allLinkQuery.subscribeToMore({
+      document: NEW_LINKS_SUBSCRIPTION,
+      updateQuery: (previous: any, { subscriptionData }) => {
+        const newAllLinks = [subscriptionData.data.Link.node, ...previous.allLinks];
+        return {
+          ...previous,
+          allLinks: newAllLinks
+        };
+      }
+    });
 
-    allLinkQuery
-      .subscribeToMore({
-        document: NEW_VOTES_SUBSCRIPTION,
-        updateQuery: (previous: any, { subscriptionData }) => {
-          const votedLinkIndex = previous.allLinks.findIndex(myLink =>
-            myLink.id === subscriptionData.data.Vote.node.link.id);
-          const link = subscriptionData.data.Vote.node.link;
-          const newAllLinks = previous.allLinks.slice();
-          newAllLinks[votedLinkIndex] = link;
-          return {
-            ...previous,
-            allLinks: newAllLinks
-          };
-        }
-      })
-      ;
+    allLinkQuery.subscribeToMore({
+      document: NEW_VOTES_SUBSCRIPTION,
+      updateQuery: (previous: any, { subscriptionData }) => {
+        const votedLinkIndex = previous.allLinks.findIndex(
+          myLink => myLink.id === subscriptionData.data.Vote.node.link.id
+        );
+        const link = subscriptionData.data.Vote.node.link;
+        const newAllLinks = previous.allLinks.slice();
+        newAllLinks[votedLinkIndex] = link;
+        return {
+          ...previous,
+          allLinks: newAllLinks
+        };
+      }
+    });
 
     const querySubscription = allLinkQuery.valueChanges.subscribe(response => {
       this.allLinks = response.data.allLinks;

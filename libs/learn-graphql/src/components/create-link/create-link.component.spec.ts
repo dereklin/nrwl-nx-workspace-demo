@@ -16,10 +16,7 @@ describe('CreateLinkComponent', () => {
       TestBed.configureTestingModule({
         declarations: [CreateLinkComponent],
         imports: [RouterModule, RouterTestingModule],
-        providers: [
-          {provide: AuthService, useValue: {}},
-          {provide: Apollo, useValue: {}}
-        ],
+        providers: [{ provide: AuthService, useValue: {} }, { provide: Apollo, useValue: {} }],
         schemas: [NO_ERRORS_SCHEMA]
       }).compileComponents();
     })

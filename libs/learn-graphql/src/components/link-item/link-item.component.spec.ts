@@ -12,9 +12,7 @@ describe('LinkItemComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [LinkItemComponent],
-        providers: [
-          {provide: Apollo, useValue: {}}
-        ]
+        providers: [{ provide: Apollo, useValue: {} }]
       }).compileComponents();
     })
   );
@@ -22,7 +20,7 @@ describe('LinkItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LinkItemComponent);
     component = fixture.componentInstance;
-    component.link = {votes: []} as Link;
+    component.link = { votes: [] } as Link;
     fixture.detectChanges();
   });
 

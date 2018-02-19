@@ -21,14 +21,8 @@ describe('ApolloGameComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [ApolloGameComponent, TeamCardComponent, SuccessComponent, ErrorComponent],
-        imports: [
-          RouterTestingModule,
-          HttpClientTestingModule
-        ],
-        providers: [
-          Apollo,
-          HttpLink
-        ],
+        imports: [RouterTestingModule, HttpClientTestingModule],
+        providers: [Apollo, HttpLink],
         schemas: [NO_ERRORS_SCHEMA]
       }).compileComponents();
     })

@@ -18,13 +18,8 @@ describe('AppApolloComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [AppApolloComponent],
-        imports: [
-          HttpClientTestingModule
-        ],
-        providers: [
-          Apollo,
-          HttpLink
-        ]
+        imports: [HttpClientTestingModule],
+        providers: [Apollo, HttpLink]
       }).compileComponents();
     })
   );

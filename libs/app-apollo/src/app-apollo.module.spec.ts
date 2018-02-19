@@ -6,8 +6,6 @@ import { AppApolloModule } from './app-apollo.module';
 
 describe('AppApolloModule', () => {
   it('should work', () => {
-    expect(new AppApolloModule(new Apollo(),
-      new HttpLink({} as HttpClient)
-    )).toBeDefined();
+    expect(new AppApolloModule(new Apollo(), new HttpLink({} as HttpClient))).toBeDefined();
   });
 });

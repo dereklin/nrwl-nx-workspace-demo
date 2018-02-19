@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 // 2
 export const ALL_LINKS_QUERY = gql`
   query AllLinksQuery {
-    allLinks (orderBy: createdAt_DESC) {
+    allLinks(orderBy: createdAt_DESC) {
       id
       createdAt
       url
@@ -121,13 +121,7 @@ export interface CreateVoteMutationResponse {
 
 export const ALL_LINKS_SEARCH_QUERY = gql`
   query AllLinksSearchQuery($searchText: String!) {
-    allLinks(filter: {
-      OR: [{
-        url_contains: $searchText
-      }, {
-        description_contains: $searchText
-      }]
-    }) {
+    allLinks(filter: { OR: [{ url_contains: $searchText }, { description_contains: $searchText }] }) {
       id
       url
       description
@@ -153,9 +147,7 @@ export interface AllLinksSearchQueryResponse {
 
 export const NEW_LINKS_SUBSCRIPTION = gql`
   subscription {
-    Link(filter: {
-      mutation_in: [CREATED]
-    }) {
+    Link(filter: { mutation_in: [CREATED] }) {
       node {
         id
         url
@@ -182,9 +174,7 @@ export interface NewLinkSubcriptionResponse {
 
 export const NEW_VOTES_SUBSCRIPTION = gql`
   subscription {
-    Vote(filter: {
-      mutation_in: [CREATED]
-    }) {
+    Vote(filter: { mutation_in: [CREATED] }) {
       node {
         id
         link {

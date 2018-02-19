@@ -12,19 +12,18 @@ describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SearchComponent, LinkItemComponent ],
-      imports: [
-        FormsModule
-      ],
-      providers: [
-        {provide: Apollo, useValue: {}},
-        {provide: AuthService, useValue: { isAuthenticated: of(true) }}
-      ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [SearchComponent, LinkItemComponent],
+        imports: [FormsModule],
+        providers: [
+          { provide: Apollo, useValue: {} },
+          { provide: AuthService, useValue: { isAuthenticated: of(true) } }
+        ]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SearchComponent);

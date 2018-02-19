@@ -19,17 +19,12 @@ describe('LinkListComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [
-          LinkListComponent,
-          LinkItemComponent
-        ],
-        imports: [
-          HttpClientTestingModule
-        ],
+        declarations: [LinkListComponent, LinkItemComponent],
+        imports: [HttpClientTestingModule],
         providers: [
-          {provide: AuthService, useValue: { isAuthenticated: of(true) }},
+          { provide: AuthService, useValue: { isAuthenticated: of(true) } },
           Apollo,
-          {provide: ChangeDetectorRef, useValue: {}},
+          { provide: ChangeDetectorRef, useValue: {} },
           HttpLink
         ]
       }).compileComponents();

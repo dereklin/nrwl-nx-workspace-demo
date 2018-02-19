@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 
 describe('ApolloGameModule', () => {
   it('should work', () => {
-    expect(new ApolloGameModule(new Apollo(),
-    new HttpLink({} as HttpClient))).toBeDefined();
+    expect(new ApolloGameModule(new Apollo(), new HttpLink({} as HttpClient))).toBeDefined();
   });
 });

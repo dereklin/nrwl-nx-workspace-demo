@@ -41,10 +41,9 @@ export class SearchComponent implements OnInit, OnDestroy {
           searchText: this.searchText
         }
       })
-      .valueChanges
-      .pipe(
-        // take(1)
-      )
+      .valueChanges.pipe
+      // take(1)
+      ()
       .subscribe((response: any) => {
         this.allLinks = response.data.allLinks;
         this.loading = response.data.loading;

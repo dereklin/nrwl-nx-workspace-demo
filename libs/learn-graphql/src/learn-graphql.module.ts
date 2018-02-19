@@ -56,7 +56,7 @@ export class LearnGraphqlModule {
         reconnect: true,
         timeout: 30000,
         connectionParams: {
-          authToken: localStorage.getItem(GC_AUTH_TOKEN),
+          authToken: localStorage.getItem(GC_AUTH_TOKEN)
         }
       }
     });
@@ -70,7 +70,7 @@ export class LearnGraphqlModule {
           return !!operationAST && operationAST.operation === 'subscription';
         },
         ws,
-        http,
+        http
       ),
       // link: http,
       cache: new InMemoryCache()

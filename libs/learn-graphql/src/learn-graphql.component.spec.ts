@@ -13,18 +13,16 @@ describe('LearnGraphqlComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [
-          LearnGraphqlComponent,
-          HeaderComponent
-        ],
-        imports: [
-          RouterTestingModule
-        ],
+        declarations: [LearnGraphqlComponent, HeaderComponent],
+        imports: [RouterTestingModule],
         providers: [
-          {provide: AuthService, useValue: {
-            isAuthenticated: of(true),
-            autoLogin: () => {}
-          }}
+          {
+            provide: AuthService,
+            useValue: {
+              isAuthenticated: of(true),
+              autoLogin: () => {}
+            }
+          }
         ]
       }).compileComponents();
     })

@@ -13,12 +13,8 @@ describe('HeaderComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [HeaderComponent],
-        imports: [
-          RouterTestingModule
-        ],
-        providers: [
-          {provide: AuthService, useValue: { isAuthenticated: of(true) }}
-        ]
+        imports: [RouterTestingModule],
+        providers: [{ provide: AuthService, useValue: { isAuthenticated: of(true) } }]
       }).compileComponents();
     })
   );
