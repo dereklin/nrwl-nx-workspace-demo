@@ -77,7 +77,7 @@ export class LinkListComponent implements OnInit, OnDestroy {
     private cdf: ChangeDetectorRef,
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) {}
 
   public ngOnInit() {
@@ -139,7 +139,9 @@ export class LinkListComponent implements OnInit, OnDestroy {
       query.subscribeToMore({
         document: NEW_VOTES_SUBSCRIPTION,
         updateQuery: (previous: any, { subscriptionData }) => {
-          const votedLinkIndex = previous.allLinks.findIndex(myLink => myLink.id === subscriptionData.data.Vote.node.link.id);
+          const votedLinkIndex = previous.allLinks.findIndex(
+            myLink => myLink.id === subscriptionData.data.Vote.node.link.id
+          );
           const link = subscriptionData.data.Vote.node.link;
           const newAllLinks = previous.allLinks.slice();
           newAllLinks[votedLinkIndex] = link;

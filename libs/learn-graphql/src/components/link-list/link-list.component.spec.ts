@@ -21,10 +21,7 @@ describe('LinkListComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [LinkListComponent, LinkItemComponent],
-        imports: [
-          HttpClientTestingModule,
-          RouterTestingModule
-        ],
+        imports: [HttpClientTestingModule, RouterTestingModule],
         providers: [
           { provide: AuthService, useValue: { isAuthenticated: of(true) } },
           Apollo,

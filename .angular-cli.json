@@ -127,6 +127,12 @@
       "appRoot": ""
     },
     {
+      "name": "learn-swiper",
+      "root": "libs/learn-swiper/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
       "name": "movie-resolver",
       "root": "libs/movie-resolver/src",
       "test": "../../../test.js",

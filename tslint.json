@@ -31,7 +31,10 @@
     "interface-name": false,
     "interface-over-type-literal": true,
     "label-position": true,
-    "max-classes-per-file": [false, 0],
+    "max-classes-per-file": [
+      false,
+      0
+    ],
     "max-line-length": [
       true,
       140
@@ -81,7 +84,11 @@
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "pipe-naming": [true, "camelCase", "my"],
+    "pipe-naming": [
+      true,
+      "camelCase",
+      "my"
+    ],
     "prefer-const": true,
     "quotemark": [
       true,
@@ -89,8 +96,17 @@
       "avoid-escape"
     ],
     "radix": true,
-    "space-before-function-paren": [true, "anonymous"],
-    "trailing-comma": [false, {"multiline": "always", "singleline": "never"}],
+    "space-before-function-paren": [
+      true,
+      "anonymous"
+    ],
+    "trailing-comma": [
+      false,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
     "triple-equals": [
       true,
       "allow-null-check"
@@ -124,10 +140,26 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "whitespace": [true, "check-branch", "check-operator", "check-typecast", "check-module"],
-    "arrow-parens": [true, "ban-single-arg-parens"],
-    "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "object-literal-key-quotes": [true, "as-needed"],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-operator",
+      "check-typecast",
+      "check-module"
+    ],
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "semicolon": [
+      true,
+      "always",
+      "ignore-bound-class-methods"
+    ],
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
     "nx-enforce-module-boundaries": [
       false,
       {
@@ -135,7 +167,8 @@
           "app-apollo",
           "apollo-game",
           "learn-graphql",
-          "not-found"
+          "not-found",
+          "learn-swiper"
         ],
         "allow": []
       }
