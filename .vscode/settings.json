@@ -6,5 +6,6 @@
   "editor.dragAndDrop": true,
   "editor.wordWrap": "on",
   "tslint.autoFixOnSave": true,
-  "tslint.exclude": "**/node_modules/**"
+  "tslint.exclude": "**/node_modules/**",
+  "files.eol": "\n"
 }
