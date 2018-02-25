@@ -1,14 +1,15 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ChangeDetectorRef, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { LinkListComponent } from './link-list.component';
-import { AuthService } from '../../services/auth.service';
+import { RouterTestingModule } from '@angular/router/testing';
 import { Apollo } from 'apollo-angular';
-import { ChangeDetectorRef } from '@angular/core';
-import { LinkItemComponent } from '../../components/link-item/link-item.component';
-import { of } from 'rxjs/observable/of';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { of } from 'rxjs/observable/of';
+
+import { LinkItemComponent } from '../../components/link-item/link-item.component';
+import { AuthService } from '../../services/auth.service';
+import { LinkListComponent } from './link-list.component';
 
 describe('LinkListComponent', () => {
   let component: LinkListComponent;
@@ -20,13 +21,17 @@ describe('LinkListComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [LinkListComponent, LinkItemComponent],
-        imports: [HttpClientTestingModule],
+        imports: [
+          HttpClientTestingModule,
+          RouterTestingModule
+        ],
         providers: [
           { provide: AuthService, useValue: { isAuthenticated: of(true) } },
           Apollo,
           { provide: ChangeDetectorRef, useValue: {} },
           HttpLink
-        ]
+        ],
+        schemas: [NO_ERRORS_SCHEMA]
       }).compileComponents();
     })
   );
