@@ -12,7 +12,21 @@ const routes: Routes = [
     path: '',
     component: LearnGraphqlComponent,
     children: [
-      { path: '', component: LinkListComponent, pathMatch: 'full' },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'new/1'
+      },
+      {
+        path: 'new/:page',
+        component: LinkListComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'top',
+        component: LinkListComponent,
+        pathMatch: 'full'
+      },
       {
         path: 'create',
         component: CreateLinkComponent,

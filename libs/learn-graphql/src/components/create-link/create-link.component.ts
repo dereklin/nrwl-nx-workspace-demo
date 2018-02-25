@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { CREATE_LINK_MUTATION, CreateLinkMutationResponse, ALL_LINKS_QUERY } from '../../graphql';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GC_USER_ID } from '../../constants';
+import { GC_USER_ID, LINKS_PER_PAGE } from '../../constants';
 
 @Component({
   selector: 'app-create-link',
@@ -39,10 +39,26 @@ export class CreateLinkComponent implements OnInit {
         },
         update: (store, { data: { createLink } }) => {
           const data: any = store.readQuery({
-            query: ALL_LINKS_QUERY
+            query: ALL_LINKS_QUERY,
+            variables: {
+              first: LINKS_PER_PAGE,
+              skip: 0,
+              orderBy: 'createdAt_DESC'
+            }
           });
-          data.allLinks.push(createLink);
-          store.writeQuery({ query: ALL_LINKS_QUERY, data });
+          const allLinks = data.allLinks.slice();
+          allLinks.splice(0, 0, createLink);
+          allLinks.pop();
+          data.allLinks = allLinks;
+          store.writeQuery({
+            query: ALL_LINKS_QUERY,
+            variables: {
+              first: LINKS_PER_PAGE,
+              skip: 0,
+              orderBy: 'createdAt_DESC'
+            },
+            data
+          });
         }
       })
       .subscribe(

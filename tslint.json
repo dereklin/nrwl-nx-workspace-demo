@@ -129,7 +129,7 @@
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "object-literal-key-quotes": [true, "as-needed"],
     "nx-enforce-module-boundaries": [
-      true,
+      false,
       {
         "lazyLoad": [
           "app-apollo",

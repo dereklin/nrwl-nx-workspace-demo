@@ -4,8 +4,8 @@ import gql from 'graphql-tag';
 
 // 2
 export const ALL_LINKS_QUERY = gql`
-  query AllLinksQuery {
-    allLinks(orderBy: createdAt_DESC) {
+  query AllLinksQuery($first: Int, $skip: Int, $orderBy: LinkOrderBy) {
+    allLinks(first: $first, skip: $skip, orderBy: $orderBy) {
       id
       createdAt
       url
@@ -21,12 +21,16 @@ export const ALL_LINKS_QUERY = gql`
         }
       }
     }
+    _allLinksMeta {
+      count
+    }
   }
 `;
 
 // 3
 export interface AllLinkQueryResponse {
   allLinks: Link[];
+  _allLinksMeta: { count: number };
   loading: boolean;
 }
 

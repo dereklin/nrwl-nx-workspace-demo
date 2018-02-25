@@ -7,3 +7,7 @@
   [updateStoreAfterVote]="updateStoreAfterVote"
           >
 </app-link-item>
+<div *ngIf="isNewPage | async">
+  <button *ngIf="!(isFirstPage | async)" (click)="previousPage()">Previous</button>
+  <button *ngIf="morePages| async" (click)="nextPage()">Next</button>
+</div>
