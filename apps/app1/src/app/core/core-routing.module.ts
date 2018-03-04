@@ -29,6 +29,10 @@ const routes: Routes = [
         path: 'learn-graphql',
         loadChildren: '@nrwl-nx-workspace-demo/learn-graphql/src/learn-graphql.module#LearnGraphqlModule'
       },
+      {
+        path: 'learn-swiper',
+        loadChildren: '@nrwl-nx-workspace-demo/learn-swiper/src/learn-swiper.module#LearnSwiperModule'
+      },
       { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/not-found.module#NotFoundModule' },
       {
         path: '**',
