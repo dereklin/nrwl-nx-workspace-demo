@@ -161,7 +161,7 @@
       "as-needed"
     ],
     "nx-enforce-module-boundaries": [
-      false,
+      true,
       {
         "allow": [],
         "depConstraints": [
