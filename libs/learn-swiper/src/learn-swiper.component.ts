@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as Swiper from 'swiper';
 import {
-  SwiperConfigInterface, SwiperScrollbarInterface, SwiperPaginationInterface, SwiperComponent, SwiperDirective } from 'ngx-swiper-wrapper';
+  SwiperConfigInterface,
+  SwiperScrollbarInterface,
+  SwiperPaginationInterface,
+  SwiperComponent,
+  SwiperDirective
+} from 'ngx-swiper-wrapper';
 
 @Component({
   selector: 'learn-swiper',
@@ -11,14 +16,7 @@ import {
 export class LearnSwiperComponent {
   public show: boolean = true;
 
-  public slides = [
-    'First slide',
-    'Second slide',
-    'Third slide',
-    'Fourth slide',
-    'Fifth slide',
-    'Sixth slide'
-  ];
+  public slides = ['First slide', 'Second slide', 'Third slide', 'Fourth slide', 'Fifth slide', 'Sixth slide'];
 
   public type: string = 'component';
 
@@ -52,7 +50,7 @@ export class LearnSwiperComponent {
   constructor() {}
 
   public toggleType() {
-    this.type = (this.type === 'component') ? 'directive' : 'component';
+    this.type = this.type === 'component' ? 'directive' : 'component';
   }
 
   public toggleDisabled() {
@@ -60,7 +58,7 @@ export class LearnSwiperComponent {
   }
 
   public toggleDirection() {
-    this.config.direction = (this.config.direction === 'horizontal') ? 'vertical' : 'horizontal';
+    this.config.direction = this.config.direction === 'horizontal' ? 'vertical' : 'horizontal';
   }
 
   public toggleSlidesPerView() {

@@ -12,12 +12,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SwiperModule,
-    FlexLayoutModule,
-    LearnSwiperRoutingModule
-  ],
+  imports: [CommonModule, SwiperModule, FlexLayoutModule, LearnSwiperRoutingModule],
   declarations: [LearnSwiperComponent],
   providers: [
     {

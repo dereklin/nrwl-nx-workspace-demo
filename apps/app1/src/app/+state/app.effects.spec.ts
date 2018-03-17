@@ -23,11 +23,8 @@ describe('AppEffects', () => {
 
   describe('someEffect', () => {
     it('should work', () => {
-      actions = hot('-a-|', {a: {type: 'LOAD_DATA'}});
-      expect(effects.loadData).toBeObservable(
-        hot('-a-|', {a: {type: 'DATA_LOADED', payload: {}}})
-      );
+      actions = hot('-a-|', { a: { type: 'LOAD_DATA' } });
+      expect(effects.loadData).toBeObservable(hot('-a-|', { a: { type: 'DATA_LOADED', payload: {} } }));
     });
   });
-
 });
