@@ -3,7 +3,7 @@
   "project": {
     "name": "nrwl-nx-workspace-demo",
     "npmScope": "nrwl-nx-workspace-demo",
-    "latestMigration": "20180227-cleanup-scripts"
+    "latestMigration": "20180313-add-tags"
   },
   "e2e": {
     "protractor": {
@@ -71,103 +71,120 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "tags": []
     },
     {
       "name": "apollo-game",
       "root": "libs/apollo-game/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "app-apollo",
       "root": "libs/app-apollo/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "app-interfaces",
       "root": "libs/app-interfaces/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "app-tokens",
       "root": "libs/app-tokens/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "background-color-randomizer",
       "root": "libs/background-color-randomizer/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "dropdown",
       "root": "libs/dropdown/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "dummy1-service",
       "root": "libs/dummy1-service/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "http-client-service",
       "root": "libs/http-client-service/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "learn-graphql",
       "root": "libs/learn-graphql/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "learn-swiper",
       "root": "libs/learn-swiper/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "movie-resolver",
       "root": "libs/movie-resolver/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "not-found",
       "root": "libs/not-found/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "session-resolver",
       "root": "libs/session-resolver/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "simple-http-service",
       "root": "libs/simple-http-service/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "stringutils",
       "root": "libs/stringutils/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     },
     {
       "name": "tab-nav",
       "root": "libs/tab-nav/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     }
   ]
 }

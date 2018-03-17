@@ -163,14 +163,15 @@
     "nx-enforce-module-boundaries": [
       false,
       {
-        "lazyLoad": [
-          "app-apollo",
-          "apollo-game",
-          "learn-graphql",
-          "not-found",
-          "learn-swiper"
-        ],
-        "allow": []
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": [
+              "*"
+            ]
+          }
+        ]
       }
     ]
   }
