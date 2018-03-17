@@ -22,22 +22,12 @@ describe('AppEffects', () => {
   });
 
   describe('someEffect', () => {
-    it(
-      'should work',
-      marbles(async m => {
-        actions = hot('-a-|', { a: { type: 'LOAD_DATA' } });
-        expect(await readAll(effects.loadData)).toEqual([{ type: 'DATA_LOADED', payload: {} }]);
-      })
-    );
+    it('should work', () => {
+      actions = hot('-a-|', {a: {type: 'LOAD_DATA'}});
+      expect(effects.loadData).toBeObservable(
+        hot('-a-|', {a: {type: 'DATA_LOADED', payload: {}}})
+      );
+    });
   });
 
-  describe('someEffect', () => {
-    it(
-      'should work with m.hot',
-      marbles(async m => {
-        actions = m.hot('-a-|', { a: { type: 'LOAD_DATA' } });
-        expect(await readAll(effects.loadData)).toEqual([{ type: 'DATA_LOADED', payload: {} }]);
-      })
-    );
-  });
 });
