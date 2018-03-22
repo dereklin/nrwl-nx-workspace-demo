@@ -10,6 +10,10 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "types": [
+      "node",
+      "jasmine"
+    ],
     "lib": [
       "esnext",
       "es2017",
