@@ -1,6 +1,7 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
-
+const Proxy = require('browsermob-proxy').Proxy,
+  Q = require('q');
 const fs = require("fs");
 const mkdirp = require("mkdirp");
 const reporter = require('cucumber-html-reporter');
@@ -32,12 +33,17 @@ exports.config = {
   ],
   capabilities: {
     browserName: 'chrome',
+    proxy: {
+      proxyType: 'manual',
+      httpProxy: 'localhost:8888',
+      sslProxy: 'localhost:8888'
+    },
     chromeOptions: {
       // binary: 'C:/Program Files (x86)/Google Chrome (Local)/chrome.exe',
       args: [
         '--window-size=1920,1080',
-        '--disable-gpu',
-        '--headless'
+        '--disable-gpu'
+        // '--headless'
       ]
     }
   },
@@ -50,14 +56,22 @@ exports.config = {
     compiler: 'ts:ts-node/register',
     format: `json:${appDir}/e2e-reports/results.json`,
     dryRun: false,
-    tags: '',
+    tags: '@TestScenario',
     keepAlive: false
   },
   onPrepare() {
-    // require('ts-node').register({
-    //   project: appDir + '/e2e/tsconfig.e2e.json'
-    // });
     createDirectory(e2eReportsFolder);
+    var proxy = new Proxy();
+
+    return Q.ninvoke(proxy, 'start', 8888).then(function (data) {
+      console.log('data', data);
+      console.log('arguments', arguments);
+      browser.params.proxy = proxy;
+      browser.params.proxyData = data;
+      return data;
+    }, function () {
+      console.log('start failed');
+    });
   },
   beforeLaunch: () => {
     require('ts-node').register({
@@ -66,6 +80,7 @@ exports.config = {
   },
   onComplete() {
     reporter.generate(options);
+    // return Q.ninvoke(browser.params.proxy, 'stop', browser.params.proxy);
   }
 
 };
