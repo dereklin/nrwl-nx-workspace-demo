@@ -62,7 +62,7 @@
     "subscriptions-transport-ws": "0.9.7",
     "swiper": "4.2.0",
     "tachyons": "4.9.1",
-    "zone.js": "^0.8.19"
+    "zone.js": "git://github.com/JiaLiPassion/zone.js#jasmine-dist"
   },
   "devDependencies": {
     "@angular/cli": "1.7.3",
