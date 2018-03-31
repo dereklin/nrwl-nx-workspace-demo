@@ -9,7 +9,7 @@ import { DateTime } from 'luxon';
 export class Feature2Component implements OnInit {
   public now;
   constructor() {
-    this.now = DateTime.local();
+    // this.now = DateTime.local();
   }
 
   public ngOnInit() {}
