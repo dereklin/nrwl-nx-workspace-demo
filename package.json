@@ -143,6 +143,7 @@
     "cspell": "~2.1.7",
     "cucumber": "4.1.0",
     "cucumber-html-reporter": "4.0.2",
+    "cypress": "2.1.0",
     "date-time-format-timezone": "1.0.21-alpha.2",
     "express": "4.16.3",
     "husky": "0.14.3",
