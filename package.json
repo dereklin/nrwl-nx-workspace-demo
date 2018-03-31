@@ -25,7 +25,10 @@
     "update": "./node_modules/.bin/nx update",
     "update:check": "./node_modules/.bin/nx update check",
     "update:skip": "./node_modules/.bin/nx update skip",
-    "setup": "npm i --no-optional"
+    "setup": "npm i --no-optional",
+    "ncu": "ncu",
+    "ncu:check": "ncu --reject @types/geojson",
+    "ncu:update": "ncu -u --reject @types/geojson"
   },
   "private": true,
   "dependencies": {
