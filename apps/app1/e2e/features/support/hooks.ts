@@ -16,17 +16,22 @@ BeforeAll({ timeout: 20 * 1000 } /* this timeout is for this hook */, callback =
 });
 
 Before({ timeout: 60 * 1000 } /* this timeout is for this hook */, () => {
-  browser.get('');
-  console.log('beforeEach');
-  console.log('browser.params.proxy', browser.params.proxy);
-  console.log('browser.params.proxyData', browser.params.proxyData);
-  return browser.params.proxy.doHAR(browser.params.proxyData.port, 'test');
+  if (browser.params.proxy) {
+    browser.get('');
+    console.log('beforeEach');
+    console.log('browser.params.proxy', browser.params.proxy);
+    console.log('browser.params.proxyData', browser.params.proxyData);
+    return browser.params.proxy.doHAR(browser.params.proxyData.port, 'test');
+  }
+  return browser.get('');
 });
 
 After(async function(scenario) {
-  browser.params.proxy.getHAR(browser.params.proxyData.port, (err, harData) => {
-    console.log('harData', harData);
-  });
+  if (browser.params.proxy) {
+    browser.params.proxy.getHAR(browser.params.proxyData.port, (err, harData) => {
+      console.log('harData', harData);
+    });
+  }
   // not using arrow function because this is needed
   if (scenario.result.status === Status.FAILED) {
     // screenShot is a base-64 encoded PNG

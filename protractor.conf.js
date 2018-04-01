@@ -2,17 +2,17 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 const Proxy = require('browsermob-proxy').Proxy,
   Q = require('q');
-const fs = require("fs");
-const mkdirp = require("mkdirp");
+const fs = require('fs');
+const mkdirp = require('mkdirp');
 const reporter = require('cucumber-html-reporter');
 const { getAppDirectoryUsingCliConfig } = require('@nrwl/schematics/src/utils/cli-config-utils');
 const appDir = getAppDirectoryUsingCliConfig();
 
-const e2eReportsFolder = appDir + "/e2e-reports";
+const e2eReportsFolder = appDir + '/e2e-reports';
 
 function createDirectory(dir) {
   if (!fs.existsSync(dir)) {
-      mkdirp.sync(dir);
+    mkdirp.sync(dir);
   }
 }
 
@@ -22,22 +22,25 @@ const options = {
   output: `${appDir}/e2e-reports/cucumber_report.html`,
   reportSuiteAsScenarios: true,
   launchReport: true,
-  metadata: {
-  }
+  metadata: {}
 };
+
+const useBrowsermobProxy = false;
 
 exports.config = {
   allScriptsTimeout: 11000,
-  specs: [
-    appDir + '/e2e/features/**/*.feature'
-  ],
+  specs: [appDir + '/e2e/features/**/*.feature'],
   capabilities: {
     browserName: 'chrome',
-    proxy: {
-      proxyType: 'manual',
-      httpProxy: 'localhost:8888',
-      sslProxy: 'localhost:8888'
-    },
+    proxy: useBrowsermobProxy
+      ? {
+          proxyType: 'manual',
+          httpProxy: 'localhost:8888',
+          sslProxy: 'localhost:8888'
+        }
+      : {
+          proxyType: 'direct'
+        },
     chromeOptions: {
       // binary: 'C:/Program Files (x86)/Google Chrome (Local)/chrome.exe',
       args: [
@@ -61,17 +64,22 @@ exports.config = {
   },
   onPrepare() {
     createDirectory(e2eReportsFolder);
-    var proxy = new Proxy();
+    if (useBrowsermobProxy) {
+      var proxy = new Proxy();
 
-    return Q.ninvoke(proxy, 'start', 8888).then(function (data) {
-      console.log('data', data);
-      console.log('arguments', arguments);
-      browser.params.proxy = proxy;
-      browser.params.proxyData = data;
-      return data;
-    }, function () {
-      console.log('start failed');
-    });
+      return Q.ninvoke(proxy, 'start', 8888).then(
+        function(data) {
+          console.log('data', data);
+          console.log('arguments', arguments);
+          browser.params.proxy = proxy;
+          browser.params.proxyData = data;
+          return data;
+        },
+        function() {
+          console.log('start failed');
+        }
+      );
+    }
   },
   beforeLaunch: () => {
     require('ts-node').register({
@@ -82,5 +90,4 @@ exports.config = {
     reporter.generate(options);
     // return Q.ninvoke(browser.params.proxy, 'stop', browser.params.proxy);
   }
-
 };
