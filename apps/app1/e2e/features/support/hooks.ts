@@ -9,7 +9,7 @@ const expect = chai.expect;
 const { config } = require('../../../../../protractor.conf.js');
 /* tslint:ensable */
 
-BeforeAll({ timeout: 20 * 1000 } /* this timeout is for this hook */, callback => {
+BeforeAll({ timeout: 20 * 1000 } /* this timeout is for this hook */, (callback) => {
   setDefaultTimeout(30 * 1000); /* this timeout is for the steps*/
   chai.use(chaiAsPromised);
   callback();

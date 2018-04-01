@@ -4,7 +4,7 @@ import { browser, element, by } from 'protractor';
 describe('app1 App', () => {
   let page: AppPage;
 
-  beforeEach(done => {
+  beforeEach((done) => {
     page = new AppPage();
     console.log('beforeEach');
     console.log('browser.params.proxy', browser.params.proxy);
@@ -12,7 +12,7 @@ describe('app1 App', () => {
     browser.params.proxy.startHAR(browser.params.proxyData.port, 'test', done);
   });
 
-  afterEach(done => {
+  afterEach((done) => {
     console.log('afterEach');
     browser.params.proxy.getHAR(browser.params.proxyData.port, (err, harData) => {
       console.log('harData', harData);
@@ -41,8 +41,6 @@ describe('app1 App', () => {
 
     element(by.id('gobutton')).click();
 
-    expect<any>(element(by.binding('latest')).getText()).
-        toEqual('3');
+    expect<any>(element(by.binding('latest')).getText()).toEqual('3');
   });
-
 });

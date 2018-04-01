@@ -28,7 +28,7 @@ export class AppApolloComponent implements OnInit {
       }
     `;
     this.author$ = this.apollo.query({ query }).pipe(
-      map(obj => {
+      map((obj) => {
         return obj.data;
       })
     );

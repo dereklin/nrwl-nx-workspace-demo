@@ -32,8 +32,8 @@ export class LinkListComponent implements OnInit, OnDestroy {
 
   get orderedLinks(): Observable<Link[]> {
     return this.route.url.pipe(
-      map(segments => segments.toString()),
-      map(path => {
+      map((segments) => segments.toString()),
+      map((path) => {
         if (path.includes('top')) {
           return _.orderBy(this.allLinks, 'votes.length').reverse();
         } else {
@@ -44,27 +44,27 @@ export class LinkListComponent implements OnInit, OnDestroy {
   }
   get isFirstPage(): Observable<boolean> {
     return this.route.paramMap.pipe(
-      map(params => {
+      map((params) => {
         return parseInt(params.get('page'), 10);
       }),
-      map(page => page === 1)
+      map((page) => page === 1)
     );
   }
 
   get isNewPage(): Observable<boolean> {
-    return this.route.url.pipe(map(segments => segments.toString()), map(path => path.includes('new')));
+    return this.route.url.pipe(map((segments) => segments.toString()), map((path) => path.includes('new')));
   }
 
   get pageNumber(): Observable<number> {
     return this.route.paramMap.pipe(
-      map(params => {
+      map((params) => {
         return parseInt(params.get('page'), 10);
       })
     );
   }
 
   get morePages(): Observable<boolean> {
-    return this.pageNumber.pipe(map(pageNumber => pageNumber < this.count / this.linksPerPage));
+    return this.pageNumber.pipe(map((pageNumber) => pageNumber < this.count / this.linksPerPage));
   }
 
   private first$: Observable<number>;
@@ -85,17 +85,17 @@ export class LinkListComponent implements OnInit, OnDestroy {
 
     // 0
     const pageParams$: Observable<number> = this.route.paramMap.pipe(
-      map(params => {
+      map((params) => {
         return parseInt(params.get('page'), 10);
       })
     );
 
     // 1
-    const path$: Observable<string> = this.route.url.pipe(map(segments => segments.toString()));
+    const path$: Observable<string> = this.route.url.pipe(map((segments) => segments.toString()));
 
     // 2
     this.first$ = path$.pipe(
-      map(path => {
+      map((path) => {
         const isNewPage = path.includes('new');
         return isNewPage ? this.linksPerPage : 100;
       })
@@ -112,7 +112,7 @@ export class LinkListComponent implements OnInit, OnDestroy {
 
     // 4
     this.orderBy$ = path$.pipe(
-      map(path => {
+      map((path) => {
         const isNewPage = path.includes('new');
         return isNewPage ? 'createdAt_DESC' : null;
       })
@@ -140,7 +140,7 @@ export class LinkListComponent implements OnInit, OnDestroy {
         document: NEW_VOTES_SUBSCRIPTION,
         updateQuery: (previous: any, { subscriptionData }) => {
           const votedLinkIndex = previous.allLinks.findIndex(
-            myLink => myLink.id === subscriptionData.data.Vote.node.link.id
+            (myLink) => myLink.id === subscriptionData.data.Vote.node.link.id
           );
           const link = subscriptionData.data.Vote.node.link;
           const newAllLinks = previous.allLinks.slice();
@@ -165,7 +165,7 @@ export class LinkListComponent implements OnInit, OnDestroy {
     //   query: ALL_LINKS_QUERY
     // });
 
-    const querySubscription = allLinkQuery.subscribe(response => {
+    const querySubscription = allLinkQuery.subscribe((response) => {
       this.allLinks = response.data.allLinks;
       this.count = response.data._allLinksMeta.count;
       this.loading = response.loading;
@@ -182,7 +182,7 @@ export class LinkListComponent implements OnInit, OnDestroy {
     });
 
     // 2
-    const votedLink = data.allLinks.find(link => link.id === linkId);
+    const votedLink = data.allLinks.find((link) => link.id === linkId);
     votedLink.votes = createVote.link.votes;
 
     // 3

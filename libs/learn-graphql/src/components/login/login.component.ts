@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           }
         })
         .subscribe(
-          result => {
+          (result) => {
             const signinUser = result.data.authenticateUser;
             const id = signinUser.id;
             const token = signinUser.token;
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
             this.router.navigate(['..'], { relativeTo: this.route });
           },
-          error => {
+          (error) => {
             alert(error);
           }
         );
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
           }
         })
         .subscribe(
-          result => {
+          (result) => {
             const signupUser = result.data.authenticateUser;
             const id = signupUser.id;
             const token = signupUser.token;
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
 
             this.router.navigate(['..'], { relativeTo: this.route });
           },
-          error => {
+          (error) => {
             alert(error);
           }
         );

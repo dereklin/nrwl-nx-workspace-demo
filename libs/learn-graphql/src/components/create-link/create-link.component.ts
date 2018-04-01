@@ -62,10 +62,10 @@ export class CreateLinkComponent implements OnInit {
         }
       })
       .subscribe(
-        response => {
+        (response) => {
           this.router.navigate(['..'], { relativeTo: this.route });
         },
-        error => {
+        (error) => {
           console.error(error);
           this.description = newDescription;
           this.url = newUrl;

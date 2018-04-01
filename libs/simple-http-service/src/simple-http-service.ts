@@ -29,7 +29,7 @@ export class SimpleHttpService implements HttpService {
 
   private paramaterizeJson(data) {
     return Object.keys(data)
-      .map(k => {
+      .map((k) => {
         let value = data[k];
         if (typeof value === 'object') {
           value = JSON.stringify(value);

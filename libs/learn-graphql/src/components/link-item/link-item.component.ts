@@ -34,7 +34,7 @@ export class LinkItemComponent implements OnInit, OnDestroy {
 
   public voteForLink() {
     const userId = localStorage.getItem(GC_USER_ID);
-    const voterIds = this.link.votes.map(vote => vote.user.id);
+    const voterIds = this.link.votes.map((vote) => vote.user.id);
     if (voterIds.includes(userId)) {
       alert(`User (${userId}) already voted for this link.`);
       return;

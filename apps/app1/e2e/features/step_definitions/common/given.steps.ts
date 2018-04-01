@@ -6,7 +6,7 @@ import * as chai from 'chai';
 
 const expect = chai.expect;
 
-Given('I am on {string}',url => {
+Given('I am on {string}', (url) => {
   // console.log('beforeEach');
   // console.log('browser.params.proxy', browser.params.proxy);
   // console.log('browser.params.proxyData', browser.params.proxyData);
@@ -30,6 +30,5 @@ Given('I am on {string}',url => {
   //   console.log('harData', harData);
   // });
 
-  return expect<any>(element(by.binding('latest')).getText()).
-      to.eventually.equal('3');
+  return expect<any>(element(by.binding('latest')).getText()).to.eventually.equal('3');
 });

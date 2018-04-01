@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   public ngOnInit() {
-    this.authService.isAuthenticated.pipe(distinctUntilChanged()).subscribe(isAuthenticated => {
+    this.authService.isAuthenticated.pipe(distinctUntilChanged()).subscribe((isAuthenticated) => {
       this.logged = isAuthenticated;
     });
   }

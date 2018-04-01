@@ -65,7 +65,7 @@ export class LearnGraphqlModule {
       // 2
       link: ApolloLink.split(
         // 3
-        operation => {
+        (operation) => {
           const operationAST = getOperationAST(operation.query, operation.operationName);
           return !!operationAST && operationAST.operation === 'subscription';
         },
