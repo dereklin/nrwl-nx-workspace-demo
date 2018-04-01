@@ -3,5 +3,6 @@ export const environment = {
   httpServiceSettings: {
     endpoint: '/myprodendpoint',
     method: 'POST'
-  }
+  },
+  hmr: false
 };

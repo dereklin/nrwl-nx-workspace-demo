@@ -1,5 +1,7 @@
-import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
+import { ActionReducerMap, createFeatureSelector, ActionReducer } from '@ngrx/store';
 import { ActivatedRouteSnapshot, Params, RouterStateSnapshot } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { storeFreeze } from 'ngrx-store-freeze';
 
 import {
   StoreRouterConnectingModule,
@@ -15,14 +17,14 @@ export interface RouterStateUrl {
 }
 
 export interface State {
-  routerReducer: RouterReducerState<RouterStateUrl>;
+  router: RouterReducerState<RouterStateUrl>;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  routerReducer
+  router: routerReducer
 };
 
-export const getRouterState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('routerReducer');
+export const getRouterState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');
 
 export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
   public serialize(routerState: RouterStateSnapshot): RouterStateUrl {
@@ -38,3 +40,14 @@ export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
     return { url, queryParams, params };
   }
 }
+
+export function stateSetter(myReducer: ActionReducer<any>): ActionReducer<any> {
+  return (state, action: any) => {
+    if (action.type === 'SET_ROOT_STATE') {
+      return action.payload;
+    }
+    return myReducer(state, action);
+  };
+}
+
+export const metaReducers: any = environment.production ? [] : [storeFreeze, stateSetter];

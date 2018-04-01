@@ -8,5 +8,6 @@ export const environment = {
   httpServiceSettings: {
     endpoint: '/mydevendpoint',
     method: 'POST'
-  }
+  },
+  hmr: true
 };

@@ -82,6 +82,20 @@
     "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
+    "nx-enforce-module-boundaries": [
+      false,
+      {
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": [
+              "*"
+            ]
+          }
+        ]
+      }
+    ],
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "pipe-naming": [
@@ -147,10 +161,6 @@
       "check-typecast",
       "check-module"
     ],
-    "arrow-parens": [
-      true,
-      "ban-single-arg-parens"
-    ],
     "semicolon": [
       true,
       "always",
@@ -160,19 +170,8 @@
       true,
       "as-needed"
     ],
-    "nx-enforce-module-boundaries": [
-      true,
-      {
-        "allow": [],
-        "depConstraints": [
-          {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": [
-              "*"
-            ]
-          }
-        ]
-      }
+    "arrow-parens": [
+      true
     ]
   }
 }

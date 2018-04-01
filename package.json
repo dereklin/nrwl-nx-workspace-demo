@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:app1": "ng serve --app=app1 --open",
+    "start:app1": "npm start -- --hmr --app=app1 --open",
     "build": "ng build",
     "test": "jest",
     "test:karma": "ng test",
