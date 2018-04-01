@@ -31,7 +31,8 @@
     "ncu:update": "ncu -u --reject @types/geojson",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:ci": "start-server-and-test start:app1 http://localhost:4200 cypress:run"
+    "cypress:ci": "start-server-and-test start:app1 http://localhost:4200 cypress:run",
+    "precommit": "npm run format:check"
   },
   "private": true,
   "dependencies": {
