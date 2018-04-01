@@ -231,5 +231,10 @@
     "pageTitle": "Your test suite",
     "outputPath": "coverage/index.html",
     "includeFailureMsg": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format:check"
+    }
   }
 }
