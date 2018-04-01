@@ -43,3 +43,6 @@ testem.log
 Thumbs.db
 apps/**/e2e-reports
 *.sqlite
+
+cypress/videos
+cypress/screenshots
