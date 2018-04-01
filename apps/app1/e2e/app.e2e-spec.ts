@@ -6,18 +6,26 @@ describe('app1 App', () => {
 
   beforeEach((done) => {
     page = new AppPage();
-    console.log('beforeEach');
-    console.log('browser.params.proxy', browser.params.proxy);
-    console.log('browser.params.proxyData', browser.params.proxyData);
-    browser.params.proxy.startHAR(browser.params.proxyData.port, 'test', done);
+    if (browser.params.proxy) {
+      console.log('beforeEach');
+      console.log('browser.params.proxy', browser.params.proxy);
+      console.log('browser.params.proxyData', browser.params.proxyData);
+      browser.params.proxy.startHAR(browser.params.proxyData.port, 'test', done);
+    } else {
+      done();
+    }
   });
 
   afterEach((done) => {
     console.log('afterEach');
-    browser.params.proxy.getHAR(browser.params.proxyData.port, (err, harData) => {
-      console.log('harData', harData);
+    if (browser.params.proxy) {
+      browser.params.proxy.getHAR(browser.params.proxyData.port, (err, harData) => {
+        console.log('harData', harData);
+        done();
+      });
+    } else {
       done();
-    });
+    }
   });
 
   it('should display welcome message', () => {

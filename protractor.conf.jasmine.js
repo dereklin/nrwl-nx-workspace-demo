@@ -7,25 +7,25 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 const { getAppDirectoryUsingCliConfig } = require('@nrwl/schematics/src/utils/cli-config-utils');
 const appDir = getAppDirectoryUsingCliConfig();
 
+const useBrowsermobProxy = false;
+
 exports.config = {
   allScriptsTimeout: 11000,
-  specs: [
-    appDir + '/e2e/**/*.e2e-spec.ts'
-  ],
+  specs: [appDir + '/e2e/**/*.e2e-spec.ts'],
   capabilities: {
     browserName: 'chrome',
-    proxy: {
-      proxyType: 'manual',
-      httpProxy: 'localhost:8888',
-      sslProxy: 'localhost:8888'
-    },
-    
+    proxy: useBrowsermobProxy
+      ? {
+          proxyType: 'manual',
+          httpProxy: 'localhost:8888',
+          sslProxy: 'localhost:8888'
+        }
+      : {
+          proxyType: 'direct'
+        },
     chromeOptions: {
       // binary: 'C:/Program Files (x86)/Google Chrome (Local)/chrome.exe',
-      args: [
-        '--window-size=1920,1080',
-        '--disable-gpu',
-      ]
+      args: ['--window-size=1920,1080', '--disable-gpu']
     }
   },
   directConnect: true,
@@ -41,16 +41,22 @@ exports.config = {
       project: appDir + '/e2e/tsconfig.e2e.json'
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
-    var proxy = new Proxy();
 
-    return Q.ninvoke(proxy, 'start', 8888).then(function (data) {
-      console.log('data', data);
-      console.log('arguments', arguments);
-      browser.params.proxy = proxy;
-      browser.params.proxyData = data;
-      return data;
-    }, function () {
-      console.log('start failed');
-    });
+    if (useBrowsermobProxy) {
+      var proxy = new Proxy();
+
+      return Q.ninvoke(proxy, 'start', 8888).then(
+        function(data) {
+          console.log('data', data);
+          console.log('arguments', arguments);
+          browser.params.proxy = proxy;
+          browser.params.proxyData = data;
+          return data;
+        },
+        function() {
+          console.log('start failed');
+        }
+      );
+    }
   }
 };
