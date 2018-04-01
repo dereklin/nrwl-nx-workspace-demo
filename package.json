@@ -28,7 +28,10 @@
     "setup": "npm i --no-optional",
     "ncu": "ncu",
     "ncu:check": "ncu --reject @types/geojson",
-    "ncu:update": "ncu -u --reject @types/geojson"
+    "ncu:update": "ncu -u --reject @types/geojson",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:ci": "start-server-and-test start:app1 http://localhost:4200 cypress:run"
   },
   "private": true,
   "dependencies": {
@@ -114,6 +117,7 @@
     "@angular/cli": "1.7.3",
     "@angular/compiler-cli": "5.2.9",
     "@angular/language-service": "5.2.9",
+    "@bahmutov/add-typescript-to-cypress": "2.0.0",
     "@compodoc/compodoc": "1.1.1",
     "@nrwl/schematics": "0.9.1",
     "@storybook/addon-actions": "3.4.0",
@@ -188,7 +192,8 @@
     "webpack-concat-plugin": "2.4.2",
     "browsermob-proxy": "1.0.9",
     "q": "1.5.1",
-    "rxjs-marbles": "2.3.3"
+    "rxjs-marbles": "2.3.3",
+    "start-server-and-test": "1.1.4"
   },
   "jest": {
     "preset": "jest-preset-angular",

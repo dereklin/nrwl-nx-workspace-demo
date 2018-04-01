@@ -1,0 +1,23 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+  margin: 5px;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.a {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
