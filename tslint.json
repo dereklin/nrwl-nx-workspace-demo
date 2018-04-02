@@ -83,7 +83,7 @@
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "nx-enforce-module-boundaries": [
-      false,
+      true,
       {
         "allow": [],
         "depConstraints": [
