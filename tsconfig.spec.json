@@ -19,6 +19,7 @@
     "node_modules",
     "tmp",
     "**/features/support/*.ts",
-    "**/*.steps.ts"
+    "**/*.steps.ts",
+    "cypress"
   ]
 }
