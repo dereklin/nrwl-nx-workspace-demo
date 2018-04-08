@@ -32,7 +32,10 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:ci": "start-server-and-test start:app1 http-get://localhost:4200 cypress:run",
-    "precommit": "npm run format:check"
+    "precommit": "npm run format:check",
+    "dep-graph": "./node_modules/.bin/nx dep-graph",
+    "affected:dep-graph": "./node_modules/.bin/nx affected dep-graph",
+    "workspace-schematic": "./node_modules/.bin/nx workspace-schematic"
   },
   "private": true,
   "dependencies": {
@@ -60,7 +63,7 @@
     "@ngrx/store-devtools": "5.2.0",
     "@nguniversal/express-engine": "5.0.0",
     "@nguniversal/module-map-ngfactory-loader": "5.0.0",
-    "@nrwl/nx": "0.10.0",
+    "@nrwl/nx": "0.11.0",
     "@swimlane/ngx-charts": "7.2.0",
     "ag-grid": "17.0.0",
     "ag-grid-angular": "17.0.0",
@@ -97,7 +100,7 @@
     "sortablejs": "1.7.0",
     "web-animations-js": "2.3.1",
     "xlsx": "0.12.7",
-    "zone.js": "git://github.com/JiaLiPassion/zone.js.git#jasmine-dist",
+    "zone.js": "0.8.25",
     "apollo-angular": "1.0.1",
     "apollo-angular-link-http": "1.0.2",
     "apollo-cache-inmemory": "1.1.12",
@@ -120,7 +123,7 @@
     "@angular/language-service": "5.2.9",
     "@bahmutov/add-typescript-to-cypress": "2.0.0",
     "@compodoc/compodoc": "1.1.1",
-    "@nrwl/schematics": "0.10.0",
+    "@nrwl/schematics": "0.11.0",
     "@storybook/addon-actions": "3.4.0",
     "@storybook/addon-links": "3.4.0",
     "@storybook/addon-notes": "3.4.0",
