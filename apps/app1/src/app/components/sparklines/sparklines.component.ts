@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare function escape(s: string): string;
@@ -26,6 +26,7 @@ function atou(str) {
   styleUrls: ['./sparklines.component.scss']
 })
 export class SparklinesComponent implements OnInit {
+  @Input() public mySvgBase64;
   public svgBase64;
   private mySvg = `
   <svg xmlns='http://www.w3.org/2000/svg'>
@@ -64,6 +65,7 @@ export class SparklinesComponent implements OnInit {
   constructor(private domSanitizer: DomSanitizer) {}
 
   public ngOnInit() {
-    this.svgBase64 = this.domSanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;base64,${utoa(this.mySvg)}`);
+    // this.svgBase64 = this.domSanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;base64,${utoa(this.mySvg)}`);
+    this.svgBase64 = this.domSanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;base64,${this.mySvgBase64}`);
   }
 }

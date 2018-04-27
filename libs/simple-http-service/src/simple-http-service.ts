@@ -24,7 +24,11 @@ export class SimpleHttpService implements HttpService {
    */
   public post(service: string, method: string, request: any): Observable<any> {
     console.log('httpServiceSettings', this.httpServiceSettings);
-    return of({ name: 'test' });
+    // tslint:disable
+    return of({
+      svg:
+        'CiAgPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPgogIDxwb2x5bGluZQogICAgIGZpbGw9Im5vbmUiCiAgICAgc3Ryb2tlPSIjMDA3NGQ5IgogICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICBwb2ludHM9IgogICAgICAgMDAsMTIwCiAgICAgICAyMCw2MAogICAgICAgNDAsODAKICAgICAgIDYwLDIwCiAgICAgICA4MCw4MAogICAgICAgMTAwLDgwCiAgICAgICAxMjAsNjAKICAgICAgIDE0MCwxMDAKICAgICAgIDE2MCw5MAogICAgICAgMTgwLDgwCiAgICAgICAyMDAsIDExMAogICAgICAgMjIwLCAxMAogICAgICAgMjQwLCA3MAogICAgICAgMjYwLCAxMDAKICAgICAgIDI4MCwgMTAwCiAgICAgICAzMDAsIDQwCiAgICAgICAzMjAsIDAKICAgICAgIDM0MCwgMTAwCiAgICAgICAzNjAsIDEwMAogICAgICAgMzgwLCAxMjAKICAgICAgIDQwMCwgNjAKICAgICAgIDQyMCwgNzAKICAgICAgIDQ0MCwgODAKICAgICAiCiAgIC8+Cjwvc3ZnPgogIA=='
+    });
   }
 
   private paramaterizeJson(data) {
