@@ -36,7 +36,9 @@
     "precommit": "pretty-quick --staged",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "affected:dep-graph": "./node_modules/.bin/nx affected dep-graph",
-    "workspace-schematic": "./node_modules/.bin/nx workspace-schematic"
+    "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
+    "dyson": "dyson ./dyson",
+    "dyson:watch": "nodemon --watch dyson --exec dyson dyson"
   },
   "private": true,
   "dependencies": {
@@ -116,9 +118,7 @@
     "ngx-swiper-wrapper": "5.3.8",
     "subscriptions-transport-ws": "0.9.7",
     "swiper": "4.2.2",
-    "tachyons": "4.9.1",
-    "dyson": "dyson ./dyson",
-    "dyson:watch": "nodemon --watch dyson --exec dyson dyson"
+    "tachyons": "4.9.1"
   },
   "devDependencies": {
     "@angular/cli": "1.7.3",
