@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 declare function escape(s: string): string;
 declare function unescape(s: string): string;
@@ -27,8 +28,7 @@ function atou(str) {
 export class SparklinesComponent implements OnInit {
   public svgBase64;
   private mySvg = `
-  <svg class="chart">
-
+  <svg xmlns='http://www.w3.org/2000/svg'>
   <polyline
      fill="none"
      stroke="#0074d9"
@@ -59,13 +59,11 @@ export class SparklinesComponent implements OnInit {
        440, 80
      "
    />
-
 </svg>
-
   `;
-  constructor() {}
+  constructor(private domSanitizer: DomSanitizer) {}
 
   public ngOnInit() {
-    this.svgBase64 = utoa(this.mySvg);
+    this.svgBase64 = this.domSanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;base64,${utoa(this.mySvg)}`);
   }
 }
