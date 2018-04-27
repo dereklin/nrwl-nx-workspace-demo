@@ -23,9 +23,6 @@
     "paths": {
       "@nrwl-nx-workspace-demo/*": [
         "libs/*"
-      ],
-      "@nrwl-nx-workspace-demo": [
-        "libs"
       ]
     }
   },

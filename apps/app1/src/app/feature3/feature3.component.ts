@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BackgroundColorRandomizer } from '@nrwl-nx-workspace-demo';
+import { BackgroundColorRandomizer } from '@nrwl-nx-workspace-demo/background-color-randomizer';
 
 @Component({
   selector: 'app-feature3',

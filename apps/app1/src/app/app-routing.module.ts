@@ -6,7 +6,7 @@ import { Feature3Component } from './feature3/feature3.component';
 import { Feature3Module } from './feature3/feature3.module';
 
 import { COREROUTEBASESPACE } from './core/core-routing.constants';
-import { MovieResolver } from '@nrwl-nx-workspace-demo';
+import { MovieResolver } from '@nrwl-nx-workspace-demo/movie-resolver';
 
 const routes: Route[] = [
   { path: '', redirectTo: `${COREROUTEBASESPACE}f1`, pathMatch: 'full' },
