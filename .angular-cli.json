@@ -3,7 +3,7 @@
   "project": {
     "name": "nrwl-nx-workspace-demo",
     "npmScope": "nrwl-nx-workspace-demo",
-    "latestMigration": "20180405-add-workspace-schematic-command"
+    "latestMigration": "20180424-add-tsconfig-tools"
   },
   "e2e": {
     "protractor": {
@@ -33,10 +33,7 @@
     "schematics": {
       "collection": "@nrwl/schematics",
       "postGenerate": "npm run format",
-      "newProject": [
-        "app",
-        "lib"
-      ]
+      "newProject": ["app", "lib"]
     },
     "styleExt": "scss",
     "component": {}
@@ -49,10 +46,7 @@
       "name": "app1",
       "root": "apps/app1/src",
       "outDir": "dist/apps/app1",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
