@@ -1,77 +1,40 @@
 {
-  "extends": [
-    "tslint:recommended"
-  ],
-  "rulesDirectory": [
-    "node_modules/codelyzer",
-    "node_modules/@nrwl/schematics/src/tslint"
-  ],
+  "extends": ["tslint:recommended"],
+  "rulesDirectory": ["node_modules/codelyzer", "node_modules/@nrwl/schematics/src/tslint"],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
+    "comment-format": [true, "check-space"],
     "curly": true,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs",
-      "rxjs/Rx"
-    ],
     "import-destructuring-spacing": true,
     "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
+    "indent": [true, "spaces"],
     "interface-name": false,
     "interface-over-type-literal": true,
     "label-position": true,
-    "max-classes-per-file": [
-      false,
-      0
-    ],
-    "max-line-length": [
-      true,
-      140
-    ],
+    "max-classes-per-file": [false, 0],
+    "max-line-length": [true, 140],
     "member-access": true,
     "member-ordering": [
       true,
       {
-        "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
-        ]
+        "order": ["static-field", "instance-field", "static-method", "instance-method"]
       }
     ],
     "no-arg": true,
     "no-attribute-parameter-decorator": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      false,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [false, "ignore-params"],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -89,31 +52,18 @@
         "depConstraints": [
           {
             "sourceTag": "*",
-            "onlyDependOnLibsWithTags": [
-              "*"
-            ]
+            "onlyDependOnLibsWithTags": ["*"]
           }
         ]
       }
     ],
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "pipe-naming": [
-      true,
-      "camelCase",
-      "my"
-    ],
+    "pipe-naming": [true, "camelCase", "my"],
     "prefer-const": true,
-    "quotemark": [
-      true,
-      "single",
-      "avoid-escape"
-    ],
+    "quotemark": [true, "single", "avoid-escape"],
     "radix": true,
-    "space-before-function-paren": [
-      true,
-      "anonymous"
-    ],
+    "space-before-function-paren": [true, "anonymous"],
     "trailing-comma": [
       false,
       {
@@ -121,30 +71,11 @@
         "singleline": "never"
       }
     ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
+    "triple-equals": [true, "allow-null-check"],
     "unified-signatures": true,
-    "variable-name": [
-      true,
-      "allow-leading-underscore",
-      "allow-pascal-case",
-      "ban-keywords",
-      "check-format"
-    ],
-    "directive-selector": [
-      false,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      false,
-      "element",
-      "app",
-      "kebab-case"
-    ],
+    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case", "ban-keywords", "check-format"],
+    "directive-selector": [false, "attribute", "app", "camelCase"],
+    "component-selector": [false, "element", "app", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
@@ -154,24 +85,9 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-operator",
-      "check-typecast",
-      "check-module"
-    ],
-    "semicolon": [
-      true,
-      "always",
-      "ignore-bound-class-methods"
-    ],
-    "object-literal-key-quotes": [
-      true,
-      "as-needed"
-    ],
-    "arrow-parens": [
-      true
-    ]
+    "whitespace": [true, "check-branch", "check-operator", "check-typecast", "check-module"],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "object-literal-key-quotes": [true, "as-needed"],
+    "arrow-parens": [true]
   }
 }

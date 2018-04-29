@@ -114,7 +114,6 @@
     "reflect-metadata": "0.1.12",
     "reselect": "3.0.1",
     "rxjs": "6.0.0",
-    "rxjs-compat": "6.0.0",
     "sortablejs": "1.7.0",
     "subscriptions-transport-ws": "0.9.7",
     "swiper": "4.2.2",
