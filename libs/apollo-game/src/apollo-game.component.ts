@@ -15,7 +15,9 @@ export class ApolloGameComponent implements OnInit {
   public created = false;
   public error = false;
 
-  public updateGame() {}
+  public updateGame(event) {}
+
+  public createGame() {}
 
   constructor(private apollo: Apollo) {}
 

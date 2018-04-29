@@ -6,13 +6,13 @@
       name="'Team A'"
       (onChangeName)="updateGame($event)"
       goals="teamAScore"
-      (onGoal)="updateGame()"
+      (onGoal)="updateGame($event)"
     ></app-team-card>
     <app-team-card
       name="'Team B'"
       (onChangeName)="updateGame($event)"
       goals="teamAScore"
-      (onGoal)="updateGame()"
+      (onGoal)="updateGame($event)"
     ></app-team-card>
   </div>
   <button
