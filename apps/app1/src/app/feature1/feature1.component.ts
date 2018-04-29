@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HTTPSERVICE } from '@nrwl-nx-workspace-demo/app-tokens';
 import { HttpService } from '@nrwl-nx-workspace-demo/app-interfaces';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 

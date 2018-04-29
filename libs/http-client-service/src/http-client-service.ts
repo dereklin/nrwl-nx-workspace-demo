@@ -1,8 +1,7 @@
 // This code is not tested and might cause errors
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { _throw } from 'rxjs/observable/throw';
+import { Observable, throwError as _throw } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()

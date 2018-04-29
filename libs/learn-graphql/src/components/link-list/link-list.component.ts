@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Apollo, QueryRef } from 'apollo-angular';
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, combineLatest, switchMap } from 'rxjs/operators';
-import { Subscription } from 'rxjs/Subscription';
 
 import { ALL_LINKS_QUERY, NEW_LINKS_SUBSCRIPTION, NEW_VOTES_SUBSCRIPTION, AllLinkQueryResponse } from '../../graphql';
 import { AuthService } from '../../services/auth.service';

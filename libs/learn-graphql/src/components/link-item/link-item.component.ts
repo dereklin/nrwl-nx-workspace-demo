@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Link } from '../../types';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { timeDifferenceForDate } from '../../utils';
 import { GC_USER_ID } from '../../constants';
 import { Apollo } from 'apollo-angular';

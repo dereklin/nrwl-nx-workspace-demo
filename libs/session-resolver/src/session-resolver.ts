@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { HTTPSERVICE } from '@nrwl-nx-workspace-demo/app-tokens';
 import { HttpService } from '@nrwl-nx-workspace-demo/app-interfaces';

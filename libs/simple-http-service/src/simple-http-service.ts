@@ -1,9 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { empty } from 'rxjs/observable/empty';
+import { Observable, EMPTY as empty, of } from 'rxjs';
 
 import { map, catchError } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
 import { HttpClientService } from '@nrwl-nx-workspace-demo/http-client-service';
 import { HTTPSERVICESETTINGS } from '@nrwl-nx-workspace-demo/app-tokens';
 import { HttpService } from '@nrwl-nx-workspace-demo/app-interfaces';

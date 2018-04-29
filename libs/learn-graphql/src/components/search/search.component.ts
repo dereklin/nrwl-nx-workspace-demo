@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Link } from '../../types';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import { AuthService } from '../../services/auth.service';
 import { distinctUntilChanged, take } from 'rxjs/operators';

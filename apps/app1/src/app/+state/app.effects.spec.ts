@@ -5,7 +5,7 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { DataPersistence } from '@nrwl/nx';
 import { readAll, hot } from '@nrwl/nx/testing';
 import { AppEffects } from './app.effects';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { marbles } from 'rxjs-marbles';
 
 describe('AppEffects', () => {

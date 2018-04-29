@@ -5,8 +5,7 @@ import { Apollo } from 'apollo-angular';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { LinkItemComponent } from '../../components/link-item/link-item.component';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable, of } from 'rxjs';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
