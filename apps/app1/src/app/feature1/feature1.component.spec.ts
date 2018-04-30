@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Feature1Component } from './feature1.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { SparklinesModule } from '../components/sparklines/sparklines.module';
 
 describe('Feature1Component', () => {
   let component: Feature1Component;
@@ -9,7 +11,9 @@ describe('Feature1Component', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [Feature1Component]
+        imports: [SparklinesModule],
+        declarations: [Feature1Component],
+        schemas: [NO_ERRORS_SCHEMA]
       }).compileComponents();
     })
   );
