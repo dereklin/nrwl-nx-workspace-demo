@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Feature3Component } from './feature3.component';
-import { DropdownModule, BackgroundColorRandomizer } from '@nrwl-nx-workspace-demo';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DropdownModule } from '@nrwl-nx-workspace-demo/dropdown';
+import { BackgroundColorRandomizer } from '@nrwl-nx-workspace-demo/background-color-randomizer';
 
 describe('Feature3Component', () => {
   let component: Feature3Component;

@@ -7,27 +7,14 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "types": [
-      "node",
-      "jasmine"
-    ],
-    "lib": [
-      "esnext",
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "jasmine"],
+    "lib": ["esnext", "es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@nrwl-nx-workspace-demo/*": [
-        "libs/*"
-      ]
+      "@nrwl-nx-workspace-demo/*": ["libs/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "include": ["apps/**/*", "libs/**/*"],
+  "exclude": ["node_modules", "tmp"]
 }
