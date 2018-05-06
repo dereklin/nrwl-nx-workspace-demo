@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "ng-high-mem": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng",
     "start": "ng serve",
     "start:app1": "npm start -- --hmr --app=app1 --open",
     "build": "ng build",
@@ -40,7 +41,9 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dyson": "dyson ./dyson",
     "dyson:watch": "nodemon --watch dyson --exec dyson dyson",
-    "help": "./node_modules/.bin/nx help"
+    "help": "./node_modules/.bin/nx help",
+    "storybook": "start-storybook -p 6006"
+
   },
   "private": true,
   "dependencies": {
@@ -193,6 +196,7 @@
     "rimraf": "2.6.2",
     "rxjs-marbles": "3.0.1",
     "sass-loader": "6.0.7",
+    "semantic-ui-css": "2.3.1",
     "start-server-and-test": "1.1.4",
     "ts-jest": "22.4.4",
     "ts-node": "5.0.1",

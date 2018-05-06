@@ -33,7 +33,10 @@
     "schematics": {
       "collection": "@nrwl/schematics",
       "postGenerate": "npm run format",
-      "newProject": ["app", "lib"]
+      "newProject": [
+        "app",
+        "lib"
+      ]
     },
     "styleExt": "scss",
     "component": {}
@@ -46,7 +49,10 @@
       "name": "app1",
       "root": "apps/app1/src",
       "outDir": "dist/apps/app1",
-      "assets": ["assets", "favicon.ico"],
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -113,6 +119,13 @@
     {
       "name": "dummy1-service",
       "root": "libs/dummy1-service/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "fancy-box",
+      "root": "libs/fancy-box/src",
       "test": "../../../test.js",
       "appRoot": "",
       "tags": []

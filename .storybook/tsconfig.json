@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": [
+    "../apps/**/*.spec.ts",
+    "../libs/**/*.spec.ts",
+    "../apps/**/*.e2e-spec.ts"
+  ],
+  "include": [
+    "../apps/**/*.ts",
+    "../libs/**/*.ts",
+    "../stories/**/*.ts",
+    "../node_modules/@storybook/**/*.ts"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": false
+  }
+}
