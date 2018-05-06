@@ -1,0 +1,23 @@
+<div class="order" [ngClass]="{'long-order': config.order.length > 8,
+  'extra-long-order': config.order.length > 9
+}">
+  <div>{{config.order}}</div>
+</div>
+<div class="ship">
+  <span>ship</span>
+</div>
+<div class="size">{{ sizeText }}</div>
+<div class="tip">
+  tip
+</div>
+<div class="status" [class.active]="config.selected"></div>
+<div class="remove-order pointer">
+  <i class="big close icon" aria-hidden="true" (click)="$event.stopPropagation(); removeClick.emit()"></i>
+</div>
+<div *ngIf="config.useSemantic" class="ui dimmer">
+  <div class="content">
+    <button title="remove" (click)="$event.stopPropagation(); removeClick.emit()" class="mini ui inverted circular icon button remove">
+      <i class="close icon"></i>
+    </button>
+  </div>
+</div>
