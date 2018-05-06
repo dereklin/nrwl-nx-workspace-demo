@@ -3,7 +3,9 @@
   "exclude": [
     "../apps/**/*.spec.ts",
     "../libs/**/*.spec.ts",
-    "../apps/**/*.e2e-spec.ts"
+    "../apps/**/*.e2e-spec.ts",
+    "../apps/**/*.steps.ts",
+    "../apps/**/support/hooks.ts"
   ],
   "include": [
     "../apps/**/*.ts",

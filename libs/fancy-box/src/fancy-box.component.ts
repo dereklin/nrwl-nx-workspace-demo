@@ -15,7 +15,7 @@ import {
 declare const $: any;
 
 @Component({
-  selector: 'fany-box',
+  selector: 'fancy-box',
   templateUrl: './fancy-box.component.html',
   styleUrls: ['./fancy-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
