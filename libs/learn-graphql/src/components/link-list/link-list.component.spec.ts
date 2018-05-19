@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { of } from 'rxjs';
+import { of } from 'rxjs/observable/of';
 
 import { LinkItemComponent } from '../../components/link-item/link-item.component';
 import { AuthService } from '../../services/auth.service';

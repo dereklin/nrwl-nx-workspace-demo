@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { HeaderComponent } from './header.component';
-import { AuthService } from '../../services/auth.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
+import { of } from 'rxjs/observable/of';
+
+import { AuthService } from '../../services/auth.service';
+import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

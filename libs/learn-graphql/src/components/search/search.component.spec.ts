@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SearchComponent } from './search.component';
-import { Apollo } from 'apollo-angular';
-import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { Apollo } from 'apollo-angular';
+import { of } from 'rxjs/observable/of';
+
 import { LinkItemComponent } from '../../components/link-item/link-item.component';
-import { Observable, of } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { SearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;

@@ -4,7 +4,7 @@ import { LearnGraphqlComponent } from './learn-graphql.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from './services/auth.service';
-import { of } from 'rxjs';
+import { of } from 'rxjs/observable/of';
 
 describe('LearnGraphqlComponent', () => {
   let component: LearnGraphqlComponent;
