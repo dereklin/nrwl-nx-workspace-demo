@@ -46,3 +46,4 @@ apps/**/e2e-reports
 
 cypress/videos
 cypress/screenshots
+debug.log

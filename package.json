@@ -43,7 +43,6 @@
     "dyson:watch": "nodemon --watch dyson --exec dyson dyson",
     "help": "./node_modules/.bin/nx help",
     "storybook": "start-storybook -p 6006"
-
   },
   "private": true,
   "dependencies": {
@@ -116,7 +115,7 @@
     "ramda": "0.25.0",
     "reflect-metadata": "0.1.12",
     "reselect": "3.0.1",
-    "rxjs": "6.0.0",
+    "rxjs": "5.5.6",
     "sortablejs": "1.7.0",
     "subscriptions-transport-ws": "0.9.7",
     "swiper": "4.2.2",

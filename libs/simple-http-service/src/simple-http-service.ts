@@ -1,10 +1,11 @@
 import { Inject, Injectable } from '@angular/core';
-import { Observable, EMPTY as empty, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { map, catchError } from 'rxjs/operators';
 import { HttpClientService } from '@nrwl-nx-workspace-demo/http-client-service';
 import { HTTPSERVICESETTINGS } from '@nrwl-nx-workspace-demo/app-tokens';
 import { HttpService } from '@nrwl-nx-workspace-demo/app-interfaces';
+import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class SimpleHttpService implements HttpService {
