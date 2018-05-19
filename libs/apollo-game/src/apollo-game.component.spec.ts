@@ -11,7 +11,7 @@ import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-xdescribe('ApolloGameComponent', () => {
+describe('ApolloGameComponent', () => {
   let component: ApolloGameComponent;
   let fixture: ComponentFixture<ApolloGameComponent>;
   let httpLink: HttpLink;
