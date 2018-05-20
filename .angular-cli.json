@@ -33,10 +33,7 @@
     "schematics": {
       "collection": "@nrwl/schematics",
       "postGenerate": "npm run format",
-      "newProject": [
-        "app",
-        "lib"
-      ]
+      "newProject": ["app", "lib"]
     },
     "styleExt": "scss",
     "component": {}
@@ -49,10 +46,7 @@
       "name": "app1",
       "root": "apps/app1/src",
       "outDir": "dist/apps/app1",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -64,7 +58,7 @@
         "../../../node_modules/bootstrap/dist/css/bootstrap.css",
         "../../../node_modules/tachyons/css/tachyons.css",
         "../../../node_modules/swiper/dist/css/swiper.css",
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -116,6 +116,7 @@
     "ramda": "0.25.0",
     "reflect-metadata": "0.1.12",
     "reselect": "3.0.1",
+    "roboto-fontface": "0.9.0",
     "rxjs": "5.5.6",
     "sortablejs": "1.7.0",
     "subscriptions-transport-ws": "0.9.7",

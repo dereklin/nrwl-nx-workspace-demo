@@ -1,7 +1,11 @@
+// custom fonts: https://stackoverflow.com/questions/44878591/best-practice-style-for-importing-font-into-angular-4-cli-web-application/44879077
+// https://stackoverflow.com/questions/40884511/angular2-cli-include-custom-fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: Roboto, Verdana, Geneva, sans-serif;
 }
 
 input {
@@ -17,7 +21,7 @@ input {
 }
 
 .background-gray {
-  background-color: rgb(246,246,239);
+  background-color: rgb(246, 246, 239);
 }
 
 .f11 {
