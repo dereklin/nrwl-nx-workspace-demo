@@ -23,17 +23,17 @@ const routes: Routes = [
       { path: 'f1', component: Feature1Component },
       { path: 'f2', component: Feature2Component },
       { path: 'lazy', loadChildren: '../lazy/lazy.module#LazyModule' },
-      { path: 'apollo', loadChildren: '@nrwl-nx-workspace-demo/app-apollo/src/app-apollo.module#AppApolloModule' },
-      { path: 'game', loadChildren: '@nrwl-nx-workspace-demo/apollo-game/src/apollo-game.module#ApolloGameModule' },
+      { path: 'apollo', loadChildren: '@nrwl-nx-workspace-demo/app-apollo/src/lib/app-apollo.module#AppApolloModule' },
+      { path: 'game', loadChildren: '@nrwl-nx-workspace-demo/apollo-game/src/lib/apollo-game.module#ApolloGameModule' },
       {
         path: 'learn-graphql',
-        loadChildren: '@nrwl-nx-workspace-demo/learn-graphql/src/learn-graphql.module#LearnGraphqlModule'
+        loadChildren: '@nrwl-nx-workspace-demo/learn-graphql/src/lib/learn-graphql.module#LearnGraphqlModule'
       },
       {
         path: 'learn-swiper',
-        loadChildren: '@nrwl-nx-workspace-demo/learn-swiper/src/learn-swiper.module#LearnSwiperModule'
+        loadChildren: '@nrwl-nx-workspace-demo/learn-swiper/src/lib/learn-swiper.module#LearnSwiperModule'
       },
-      { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/not-found.module#NotFoundModule' },
+      { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/lib/not-found.module#NotFoundModule' },
       {
         path: '**',
         redirectTo: 'not-found',

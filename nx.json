@@ -1,0 +1,62 @@
+{
+  "npmScope": "nrwl-nx-workspace-demo",
+  "projects": {
+    "app1": {
+      "tags": []
+    },
+    "app1-e2e": {
+      "tags": []
+    },
+    "apollo-game": {
+      "tags": []
+    },
+    "app-apollo": {
+      "tags": []
+    },
+    "app-interfaces": {
+      "tags": []
+    },
+    "app-tokens": {
+      "tags": []
+    },
+    "background-color-randomizer": {
+      "tags": []
+    },
+    "dropdown": {
+      "tags": []
+    },
+    "dummy1-service": {
+      "tags": []
+    },
+    "fancy-box": {
+      "tags": []
+    },
+    "http-client-service": {
+      "tags": []
+    },
+    "learn-graphql": {
+      "tags": []
+    },
+    "learn-swiper": {
+      "tags": []
+    },
+    "movie-resolver": {
+      "tags": []
+    },
+    "not-found": {
+      "tags": []
+    },
+    "session-resolver": {
+      "tags": []
+    },
+    "simple-http-service": {
+      "tags": []
+    },
+    "stringutils": {
+      "tags": []
+    },
+    "tab-nav": {
+      "tags": []
+    }
+  }
+}

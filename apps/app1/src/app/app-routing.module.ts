@@ -17,7 +17,7 @@ const routes: Route[] = [
       movieData: MovieResolver
     }
   },
-  { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/not-found.module#NotFoundModule' },
+  { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/lib/not-found.module#NotFoundModule' },
   {
     path: '**',
     redirectTo: 'not-found',
