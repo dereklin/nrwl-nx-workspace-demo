@@ -7,7 +7,7 @@ import { HttpService } from '@nrwl-nx-workspace-demo/app-interfaces';
 
 @Injectable()
 export class SessionResolver implements Resolve<any> {
-  constructor(@Inject(HTTPSERVICE) private simpleHttpService: any) {}
+  constructor(@Inject(HTTPSERVICE) private simpleHttpService: HttpService) {}
 
   public resolve() {
     return this.simpleHttpService.post('sessionService', 'getUserSession', {});
