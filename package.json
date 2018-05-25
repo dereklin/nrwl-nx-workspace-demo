@@ -17,7 +17,7 @@
     "e2e:app1:quick": "npm run e2e:app1 -- --serve false",
     "e2e:jasmine:app1":
       "npm run e2e -- --hmr --app=app1 --config ./protractor.conf.jasmine.js --webdriver-update false",
-    "build:app1": "npm run build -- --prod --app=app1",
+    "build:app1": "npm run build -- --prod --project=app1",
     "affected:apps": "./node_modules/.bin/nx affected:apps",
     "affected:build": "./node_modules/.bin/nx affected:build",
     "affected:e2e": "./node_modules/.bin/nx affected:e2e",
@@ -124,8 +124,7 @@
     "tachyons": "4.9.1",
     "web-animations-js": "2.3.1",
     "xlsx": "0.12.13",
-    "zone.js": "^0.8.26",
-    "rxjs-compat": "6.2.0"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/compiler-cli": "6.0.3",
