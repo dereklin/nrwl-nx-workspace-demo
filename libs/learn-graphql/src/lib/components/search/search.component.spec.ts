@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { Apollo } from 'apollo-angular';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 
 import { LinkItemComponent } from '../../components/link-item/link-item.component';
 import { AuthService } from '../../services/auth.service';

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 
 import { AuthService } from '../../services/auth.service';
 import { HeaderComponent } from './header.component';
