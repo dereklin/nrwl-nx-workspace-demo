@@ -1,10 +1,10 @@
 // This code is not tested and might cause errors
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { catchError } from 'rxjs/operators';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+
+import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class HttpClientService {
@@ -26,6 +26,6 @@ export class HttpClientService {
   }
 
   private handleError(err: HttpErrorResponse | any) {
-    return ErrorObservable.create('error');
+    return throwError('error');
   }
 }
