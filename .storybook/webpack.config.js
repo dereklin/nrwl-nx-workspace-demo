@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const ConcatPlugin = require('webpack-concat-plugin');
-const libPath = path.resolve('libs');
+const libsPath = path.resolve('libs');
 const appsPath = path.resolve('apps');
 const {
   ScriptsWebpackPlugin,
@@ -11,29 +11,17 @@ const {
 } = require('@angular-devkit/build-angular/src/angular-cli-files/plugins/webpack');
 
 module.exports = {
+  resolve: {
+    alias: {
+      styles: path.resolve(__dirname, '../apps/app1/src/styles')
+    }
+  },
   module: {
     rules: [
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loaders: ['file-loader'],
         include: path.resolve(__dirname, '../')
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [`${appsPath}/app1/src/styles`]
-            }
-          }
-        ]
       }
     ]
   },
@@ -49,7 +37,7 @@ module.exports = {
       { from: 'node_modules/semantic-ui-css/themes', to: 'assets/semantic-ui-css/themes' }
     ]),
     new webpack.NormalModuleReplacementPlugin(/@nrwl-nx-workspace-demo/, function(resource) {
-      resource.request = resource.request.replace(/@nrwl-nx-workspace-demo/, libPath);
+      resource.request = resource.request.replace(/@nrwl-nx-workspace-demo(.*)/, `${libsPath}/$1/src/index.ts`);
     }),
     new ScriptsWebpackPlugin({
       name: 'scripts',
