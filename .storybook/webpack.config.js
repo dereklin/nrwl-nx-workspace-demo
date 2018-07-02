@@ -3,11 +3,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const ConcatPlugin = require('webpack-concat-plugin');
 const libPath = path.resolve('libs');
+const appsPath = path.resolve('apps');
 const {
   ScriptsWebpackPlugin,
   NamedLazyChunksWebpackPlugin,
   BaseHrefWebpackPlugin
-} = require('@angular/cli/plugins/webpack');
+} = require('@angular-devkit/build-angular/src/angular-cli-files/plugins/webpack');
 
 module.exports = {
   module: {
@@ -16,6 +17,23 @@ module.exports = {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loaders: ['file-loader'],
         include: path.resolve(__dirname, '../')
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [`${appsPath}/app1/src/styles`]
+            }
+          }
+        ]
       }
     ]
   },

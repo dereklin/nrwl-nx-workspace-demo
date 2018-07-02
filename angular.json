@@ -23,6 +23,9 @@
               "node_modules/swiper/dist/css/swiper.css",
               "apps/app1/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/app1/src/styles"]
+            },
             "scripts": []
           },
           "configurations": {
