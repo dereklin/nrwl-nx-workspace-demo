@@ -564,5 +564,13 @@
       "typescriptMismatch": false
     },
     "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:component": {
+      "styleext": "scss",
+      "spec": true,
+      "flat": false,
+      "changeDetection": "OnPush"
+    }
   }
 }
