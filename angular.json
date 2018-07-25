@@ -48,7 +48,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app1:build"
+            "browserTarget": "app1:build",
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
