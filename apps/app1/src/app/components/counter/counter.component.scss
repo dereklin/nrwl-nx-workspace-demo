@@ -1,0 +1,19 @@
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px yellow;
+  }
+  25% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 55px yellow,
+      0 0 75px yellow;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px yellow;
+  }
+}
+
+.glow {
+  animation-name: glow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
