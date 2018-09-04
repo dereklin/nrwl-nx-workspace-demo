@@ -8,9 +8,16 @@ import { DateTime } from 'luxon';
 })
 export class Feature2Component implements OnInit {
   public now;
+
+  public toState = 'state1';
+
   constructor() {
     // this.now = DateTime.local();
   }
 
   public ngOnInit() {}
+
+  public changeState(state) {
+    this.toState = state;
+  }
 }
