@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HTTPSERVICE } from '@nrwl-nx-workspace-demo/app-tokens';
 import { HttpService } from '@nrwl-nx-workspace-demo/app-interfaces';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -12,9 +12,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class Feature1Component implements OnInit {
   public mySvg$: Observable<any>;
+  public counter$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   constructor(@Inject(HTTPSERVICE) private httpService: HttpService, private domSanitizer: DomSanitizer) {}
 
   public ngOnInit() {
     this.mySvg$ = this.httpService.post('', '', '').pipe(map((svg) => svg.svg));
+    setInterval(() => {
+      this.counter$.next(this.counter$.value + 1);
+    }, 2000);
   }
 }

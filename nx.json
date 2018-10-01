@@ -57,6 +57,9 @@
     },
     "tab-nav": {
       "tags": []
+    },
+    "class-toggle-on-change": {
+      "tags": []
     }
   }
 }

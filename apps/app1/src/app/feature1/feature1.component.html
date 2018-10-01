@@ -6,7 +6,9 @@
     D
 
   </div>
-  <div class="box e"><app-counter></app-counter></div>
+  <div class="box e">
+    <nrwl-nx-workspace-demo-class-toggle-on-change [value]="counter$ | async" [duration]="1000" [className]="'glow'"></nrwl-nx-workspace-demo-class-toggle-on-change>
+  </div>
   <div class="box f">
     <app-sparklines [mySvgBase64]="mySvg$ | async"></app-sparklines>
   </div>

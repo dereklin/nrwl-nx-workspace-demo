@@ -556,6 +556,32 @@
         }
       },
       "prefix": "app"
+    },
+    "class-toggle-on-change": {
+      "root": "libs/class-toggle-on-change",
+      "sourceRoot": "libs/class-toggle-on-change/src",
+      "projectType": "library",
+      "prefix": "nrwl-nx-workspace-demo",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/class-toggle-on-change/src/test.ts",
+            "tsConfig": "libs/class-toggle-on-change/tsconfig.spec.json",
+            "karmaConfig": "libs/class-toggle-on-change/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/class-toggle-on-change/tsconfig.lib.json",
+              "libs/class-toggle-on-change/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "app1",
