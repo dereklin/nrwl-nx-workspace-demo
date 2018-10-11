@@ -33,6 +33,10 @@ const routes: Routes = [
         path: 'learn-swiper',
         loadChildren: '@nrwl-nx-workspace-demo/learn-swiper/src/lib/learn-swiper.module#LearnSwiperModule'
       },
+      {
+        path: 'report',
+        loadChildren: '../report/report.module#ReportModule'
+      },
       { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/lib/not-found.module#NotFoundModule' },
       {
         path: '**',
