@@ -1,0 +1,74 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'content'
+    'content-to-convert';
+}
+
+.content {
+  grid-area: content;
+}
+
+.header {
+  grid-area: header;
+  height: 60px;
+  background-color: black;
+}
+
+.cost-table {
+  grid-area: cost-table;
+  background-color: aqua;
+}
+
+.selection-criteria {
+  grid-area: selection-criteria;
+  background-color: green;
+}
+
+.chart1 {
+  grid-area: chart1;
+  background-color: pink;
+}
+
+.chart2 {
+  grid-area: chart2;
+  background-color: yellow;
+}
+
+.chart3 {
+  grid-area: chart3;
+  background-color: blue;
+}
+
+.profile {
+  grid-area: profile;
+  background-color: violet;
+}
+
+#contentToConvert {
+  display: grid;
+  padding: 0.5em;
+  grid-gap: 0;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: auto repeat(5, 1fr);
+  grid-template-areas:
+    'header header'
+    'cost-table profile'
+    'selection-criteria profile'
+    'chart1  profile'
+    'chart2 profile'
+    'chart3  profile';
+  height: 800px;
+  grid-area: content-to-convert;
+  // opacity: 0;
+}
+
+.overlay {
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 100;
+  background-color: white;
+  height: 800px;
+}
