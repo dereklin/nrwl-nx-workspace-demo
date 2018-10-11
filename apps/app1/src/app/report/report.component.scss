@@ -48,8 +48,12 @@
 }
 
 #contentToConvert {
+  width: 100%;
+  justify-self: center;
+  justify-content: center;
   display: grid;
-  padding: 0.5em;
+  padding-left: 3.5em;
+  padding-top: 2em;
   grid-gap: 0;
   grid-template-columns: 1fr 200px;
   grid-template-rows: auto repeat(5, 1fr);
@@ -60,7 +64,7 @@
     'chart1  profile'
     'chart2 profile'
     'chart3  profile';
-  height: 800px;
+  height: 2000px;
   grid-area: content-to-convert;
   // opacity: 0;
 }
