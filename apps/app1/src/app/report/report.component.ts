@@ -114,11 +114,15 @@ export class ReportComponent implements OnInit {
     const body = parsedHtml.body;
     const data2 = parsedHtml.getElementById('contentToConvert');
     const data = document.getElementById('contentToConvert');
+    const page2 = document.getElementById('contentToConvert2');
     // const clone = data.cloneNode();
     // const el = parser.
     // clone.setAttribute('style', 'opacity: 1;');
     // tslint:disable
     // data2['ownerDocument']['defaultView' as any] = window;
+
+    const pdf = new jspdf('p', 'mm', 'letter'); // A4 size page of PDF
+
     html2canvas(data).then((canvas) => {
       // Few necessary setting options
       const imgWidth = 208;
@@ -127,9 +131,25 @@ export class ReportComponent implements OnInit {
       const heightLeft = imgHeight;
 
       const contentDataURL = canvas.toDataURL('image/png');
-      const pdf = new jspdf('p', 'mm', 'letter'); // A4 size page of PDF
+
       const position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+      // pdf.addPage();
+      // pdf.save('MYPdf.pdf'); // Generated PDF
+    });
+    html2canvas(page2).then((canvas) => {
+      pdf.addPage();
+      // Few necessary setting options
+      const imgWidth = 208;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const heightLeft = imgHeight;
+
+      const contentDataURL = canvas.toDataURL('image/png');
+
+      const position = 0;
+      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+      // pdf.addPage();
       pdf.save('MYPdf.pdf'); // Generated PDF
     });
   }

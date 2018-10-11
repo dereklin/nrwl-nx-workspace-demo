@@ -4,7 +4,8 @@
   grid-template-rows: auto auto;
   grid-template-areas:
     'content'
-    'content-to-convert';
+    'content-to-convert'
+    'content-to-convert2';
 }
 
 .content {
@@ -47,7 +48,8 @@
   background-color: violet;
 }
 
-#contentToConvert {
+#contentToConvert,
+#contentToConvert2 {
   width: 100%;
   justify-self: center;
   justify-content: center;
@@ -65,7 +67,16 @@
     'chart2 profile'
     'chart3  profile';
   height: 2000px;
+  // opacity: 0;
+}
+
+#contentToConvert {
   grid-area: content-to-convert;
+  // opacity: 0;
+}
+
+#contentToConvert2 {
+  grid-area: content-to-convert2;
   // opacity: 0;
 }
 
