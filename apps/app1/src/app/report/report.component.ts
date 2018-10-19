@@ -123,7 +123,7 @@ export class ReportComponent implements OnInit {
       // Few necessary setting options
       const imgWidth = 208;
       const pageHeight = 295;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const imgHeight = canvas.height * imgWidth / canvas.width;
       const heightLeft = imgHeight;
 
       const contentDataURL = canvas.toDataURL('image/png');

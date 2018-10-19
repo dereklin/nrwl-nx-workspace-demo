@@ -15,17 +15,13 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ClassToggleOnChangeComponent implements OnInit, OnChanges {
-  @Input()
-  public value: number | string;
+  @Input() public value: number | string;
 
-  @Input()
-  public className: string;
+  @Input() public className: string;
 
-  @Input()
-  public duration: number = 1000;
+  @Input() public duration: number = 1000;
 
-  @HostBinding('class')
-  private myClass;
+  @HostBinding('class') private myClass;
 
   constructor(private cd: ChangeDetectorRef) {
     this.myClass = '';

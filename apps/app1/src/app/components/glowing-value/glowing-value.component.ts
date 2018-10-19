@@ -15,11 +15,9 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GlowingValueComponent implements OnInit, OnChanges {
-  @Input()
-  public value: number | string;
+  @Input() public value: number | string;
 
-  @HostBinding('class.glow')
-  private isGlowing;
+  @HostBinding('class.glow') private isGlowing;
 
   constructor(private cd: ChangeDetectorRef) {}
 
