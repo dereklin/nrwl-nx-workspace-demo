@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule, InjectionToken } from '@angular/core';
+import { InjectionToken, ModuleWithProviders, NgModule } from '@angular/core';
 import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
-import { chain } from 'lodash';
-import { slice, compose, forEach } from 'ramda';
+import { compose, forEach, slice } from 'ramda';
 
 const HighChartsModules = new InjectionToken('HighChartsModules');
 
