@@ -632,6 +632,32 @@
           }
         }
       }
+    },
+    "app-highcharts-static": {
+      "root": "libs/app-highcharts-static",
+      "sourceRoot": "libs/app-highcharts-static/src",
+      "projectType": "library",
+      "prefix": "nrwl-nx-workspace-demo",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/app-highcharts-static/src/test.ts",
+            "tsConfig": "libs/app-highcharts-static/tsconfig.spec.json",
+            "karmaConfig": "libs/app-highcharts-static/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/app-highcharts-static/tsconfig.lib.json",
+              "libs/app-highcharts-static/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "app1",

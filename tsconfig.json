@@ -29,7 +29,8 @@
       "@nrwl-nx-workspace-demo/simple-http-service": ["libs/simple-http-service/src/index.ts"],
       "@nrwl-nx-workspace-demo/stringutils": ["libs/stringutils/src/index.ts"],
       "@nrwl-nx-workspace-demo/tab-nav": ["libs/tab-nav/src/index.ts"],
-      "@nrwl-nx-workspace-demo/class-toggle-on-change": ["libs/class-toggle-on-change/src/index.ts"]
+      "@nrwl-nx-workspace-demo/class-toggle-on-change": ["libs/class-toggle-on-change/src/index.ts"],
+      "@nrwl-nx-workspace-demo/app-highcharts-static": ["libs/app-highcharts-static/src/index.ts"]
     }
   },
   "include": ["apps/**/*", "libs/**/*"],

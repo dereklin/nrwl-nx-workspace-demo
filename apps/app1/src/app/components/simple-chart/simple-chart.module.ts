@@ -5,7 +5,7 @@ import { ChartModule } from 'angular2-highcharts';
 import { SimpleChartComponent } from './simple-chart.component';
 
 @NgModule({
-  imports: [CommonModule, ChartModule.forRoot(require('highcharts'))],
+  imports: [CommonModule, ChartModule],
   declarations: [SimpleChartComponent],
   exports: [SimpleChartComponent]
 })

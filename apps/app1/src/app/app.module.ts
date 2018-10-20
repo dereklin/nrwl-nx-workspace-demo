@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { Store, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppHighchartsStaticModule } from '@nrwl-nx-workspace-demo/app-highcharts-static';
 import { NxModule } from '@nrwl/nx';
 import { take } from 'rxjs/operators';
 
@@ -29,7 +30,14 @@ interface StoreType {
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule,
-    environment.production ? [] : StoreDevtoolsModule.instrument()
+    environment.production ? [] : StoreDevtoolsModule.instrument(),
+    AppHighchartsStaticModule.forRoot([
+      require('highcharts/highstock'),
+      require('highcharts/modules/treemap'),
+      // require('highcharts/modules/exporting'),
+      // require('highcharts/modules/export-data'),
+      require('highcharts/highcharts-more')
+    ])
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

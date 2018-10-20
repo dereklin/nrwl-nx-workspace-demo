@@ -63,6 +63,9 @@
     },
     "api": {
       "tags": []
+    },
+    "app-highcharts-static": {
+      "tags": []
     }
   }
 }
