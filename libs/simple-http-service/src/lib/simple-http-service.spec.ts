@@ -13,10 +13,7 @@ describe('SimpleHttpServiceService', () => {
     });
   });
 
-  it(
-    'should be created',
-    inject([SimpleHttpService], (service: SimpleHttpService) => {
-      expect(service).toBeTruthy();
-    })
-  );
+  it('should be created', inject([SimpleHttpService], (service: SimpleHttpService) => {
+    expect(service).toBeTruthy();
+  }));
 });

@@ -10,7 +10,8 @@ import { Dummy1Service } from '@nrwl-nx-workspace-demo/dummy1-service';
   styleUrls: ['./tab-nav.component.scss']
 })
 export class TabNavComponent implements OnInit {
-  @Input() public tabs: Tab[];
+  @Input()
+  public tabs: Tab[];
 
   constructor(private dummy1Service: Dummy1Service) {}
 

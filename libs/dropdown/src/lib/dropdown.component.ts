@@ -9,11 +9,16 @@ import { DropdownConfig } from './dropdown-config.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownComponent implements OnInit {
-  @Input() public config: DropdownConfig;
-  @Input() public items: any[] = [];
-  @Output() public openDropdown: EventEmitter<void> = new EventEmitter();
-  @Output() public selectDropdownItem: EventEmitter<void> = new EventEmitter();
-  @Output() public clearDropdown: EventEmitter<void> = new EventEmitter();
+  @Input()
+  public config: DropdownConfig;
+  @Input()
+  public items: any[] = [];
+  @Output()
+  public openDropdown: EventEmitter<void> = new EventEmitter();
+  @Output()
+  public selectDropdownItem: EventEmitter<void> = new EventEmitter();
+  @Output()
+  public clearDropdown: EventEmitter<void> = new EventEmitter();
   public selectedItem: any = {};
 
   constructor() {}

@@ -13,23 +13,21 @@ describe('Feature1Component', () => {
   let component: Feature1Component;
   let fixture: ComponentFixture<Feature1Component>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        imports: [SparklinesModule, HttpClientModule],
-        declarations: [Feature1Component],
-        schemas: [NO_ERRORS_SCHEMA],
-        providers: [
-          HttpClientService,
-          {
-            provide: HTTPSERVICE,
-            useClass: SimpleHttpService
-          },
-          { provide: HTTPSERVICESETTINGS, useValue: environment.httpServiceSettings }
-        ]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [SparklinesModule, HttpClientModule],
+      declarations: [Feature1Component],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [
+        HttpClientService,
+        {
+          provide: HTTPSERVICE,
+          useClass: SimpleHttpService
+        },
+        { provide: HTTPSERVICESETTINGS, useValue: environment.httpServiceSettings }
+      ]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Feature1Component);

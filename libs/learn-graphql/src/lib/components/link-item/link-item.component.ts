@@ -18,13 +18,17 @@ interface UpdateStoreAfterVoteCallback {
   styleUrls: ['./link-item.component.scss']
 })
 export class LinkItemComponent implements OnInit, OnDestroy {
-  @Input() public link: Link;
+  @Input()
+  public link: Link;
 
-  @Input() public index: number = 0;
+  @Input()
+  public index: number = 0;
 
-  @Input() public isAuthenticated: boolean = false;
+  @Input()
+  public isAuthenticated: boolean = false;
 
-  @Input() public updateStoreAfterVote: UpdateStoreAfterVoteCallback;
+  @Input()
+  public updateStoreAfterVote: UpdateStoreAfterVoteCallback;
 
   public subscriptions: Subscription[] = [];
 

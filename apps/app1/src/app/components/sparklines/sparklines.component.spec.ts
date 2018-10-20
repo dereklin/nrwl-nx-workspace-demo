@@ -6,13 +6,11 @@ describe('SparklinesComponent', () => {
   let component: SparklinesComponent;
   let fixture: ComponentFixture<SparklinesComponent>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [SparklinesComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [SparklinesComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SparklinesComponent);

@@ -17,10 +17,7 @@ describe('SessionResolver', () => {
     });
   });
 
-  it(
-    'should be created',
-    inject([SessionResolver], (service: SessionResolver) => {
-      expect(service).toBeTruthy();
-    })
-  );
+  it('should be created', inject([SessionResolver], (service: SessionResolver) => {
+    expect(service).toBeTruthy();
+  }));
 });

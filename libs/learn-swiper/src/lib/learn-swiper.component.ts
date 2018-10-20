@@ -44,8 +44,10 @@ export class LearnSwiperComponent {
     hideOnClick: false
   };
 
-  @ViewChild(SwiperComponent) public componentRef: SwiperComponent;
-  @ViewChild(SwiperDirective) public directiveRef: SwiperDirective;
+  @ViewChild(SwiperComponent)
+  public componentRef: SwiperComponent;
+  @ViewChild(SwiperDirective)
+  public directiveRef: SwiperDirective;
 
   constructor() {}
 

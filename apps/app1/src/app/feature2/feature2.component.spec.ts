@@ -6,13 +6,11 @@ describe('Feature2Component', () => {
   let component: Feature2Component;
   let fixture: ComponentFixture<Feature2Component>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [Feature2Component]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [Feature2Component]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Feature2Component);

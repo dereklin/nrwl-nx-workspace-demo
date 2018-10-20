@@ -51,7 +51,10 @@ export class LinkListComponent implements OnInit, OnDestroy {
   }
 
   get isNewPage(): Observable<boolean> {
-    return this.route.url.pipe(map((segments) => segments.toString()), map((path) => path.includes('new')));
+    return this.route.url.pipe(
+      map((segments) => segments.toString()),
+      map((path) => path.includes('new'))
+    );
   }
 
   get pageNumber(): Observable<number> {

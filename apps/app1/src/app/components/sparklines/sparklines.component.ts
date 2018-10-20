@@ -26,7 +26,8 @@ function atou(str) {
   styleUrls: ['./sparklines.component.scss']
 })
 export class SparklinesComponent implements OnInit {
-  @Input() public mySvgBase64;
+  @Input()
+  public mySvgBase64;
   public svgBase64;
   private mySvg = `
   <svg xmlns='http://www.w3.org/2000/svg'>

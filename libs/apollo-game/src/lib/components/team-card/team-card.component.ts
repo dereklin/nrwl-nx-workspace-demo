@@ -6,8 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./team-card.component.scss']
 })
 export class TeamCardComponent implements OnInit {
-  @Input() public goals: number;
-  @Input() public name: string;
+  @Input()
+  public goals: number;
+  @Input()
+  public name: string;
 
   public onGoal() {}
 

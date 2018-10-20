@@ -10,16 +10,14 @@ describe('Feature3Component', () => {
   let component: Feature3Component;
   let fixture: ComponentFixture<Feature3Component>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        imports: [DropdownModule, RouterTestingModule],
-        declarations: [Feature3Component],
-        schemas: [NO_ERRORS_SCHEMA],
-        providers: [BackgroundColorRandomizer]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [DropdownModule, RouterTestingModule],
+      declarations: [Feature3Component],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [BackgroundColorRandomizer]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Feature3Component);

@@ -21,14 +21,20 @@ declare const $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FancyBoxComponent implements AfterViewInit, OnInit {
-  @Input() public config: any;
+  @Input()
+  public config: any;
 
-  @Output() public orderClick = new EventEmitter();
-  @Output() public doubleClick = new EventEmitter();
-  @Output() public removeClick = new EventEmitter();
+  @Output()
+  public orderClick = new EventEmitter();
+  @Output()
+  public doubleClick = new EventEmitter();
+  @Output()
+  public removeClick = new EventEmitter();
 
-  @HostBinding('class.selectable') public selectable: boolean;
-  @HostBinding('class.show-remove-mark') public showRemoveMark: boolean;
+  @HostBinding('class.selectable')
+  public selectable: boolean;
+  @HostBinding('class.show-remove-mark')
+  public showRemoveMark: boolean;
 
   public sizeText;
 
