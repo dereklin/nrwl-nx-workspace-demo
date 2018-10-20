@@ -7,7 +7,7 @@ const {
   ScriptsWebpackPlugin,
   NamedLazyChunksWebpackPlugin,
   BaseHrefWebpackPlugin
-} = require('@angular/cli/plugins/webpack');
+} = require('@angular-devkit/build-angular/src/angular-cli-files/plugins/webpack');
 
 module.exports = {
   module: {
