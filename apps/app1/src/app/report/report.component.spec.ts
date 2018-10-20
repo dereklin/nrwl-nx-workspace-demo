@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material';
 
+import { SimpleChartModule } from '../components/simple-chart/simple-chart.module';
 import { ReportComponent } from './report.component';
 
 describe('ReportComponent', () => {
@@ -8,6 +10,7 @@ describe('ReportComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [SimpleChartModule, MatCardModule],
       declarations: [ReportComponent]
     }).compileComponents();
   }));

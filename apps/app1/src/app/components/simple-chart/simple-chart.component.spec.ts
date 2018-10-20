@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ChartModule } from 'angular2-highcharts';
 
 import { SimpleChartComponent } from './simple-chart.component';
 
@@ -8,6 +9,7 @@ describe('SimpleChartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ChartModule.forRoot(require('highcharts'))],
       declarations: [SimpleChartComponent]
     }).compileComponents();
   }));
