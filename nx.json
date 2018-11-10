@@ -64,7 +64,7 @@
     "api": {
       "tags": []
     },
-    "app-highcharts-static": {
+    "highcharts-config": {
       "tags": []
     }
   }
