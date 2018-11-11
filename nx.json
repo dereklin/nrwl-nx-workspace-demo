@@ -66,6 +66,12 @@
     },
     "highcharts-config": {
       "tags": []
+    },
+    "name-tag-element": {
+      "tags": []
+    },
+    "elements-sandbox": {
+      "tags": []
     }
   }
 }

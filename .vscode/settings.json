@@ -1,11 +1,21 @@
 {
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
   "typescript.tsdk": "node_modules/typescript/lib/",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.minimap.enabled": true,
   "editor.dragAndDrop": true,
   "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
   "tslint.autoFixOnSave": true,
   "tslint.exclude": "**/node_modules/**",
-  "files.eol": "\n"
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false
+  },
+  "git.ignoreLimitWarning": true
 }
