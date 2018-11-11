@@ -10,7 +10,8 @@
     "../../libs/app-apollo/src/index.ts",
     "../../libs/apollo-game/src/index.ts",
     "../../libs/learn-graphql/src/index.ts",
-    "../../libs/learn-swiper/src/index.ts"
+    "../../libs/learn-swiper/src/index.ts",
+    "../../libs/elements-sandbox/src/index.ts"
   ],
   "exclude": ["**/*.spec.ts", "src/test.ts"]
 }

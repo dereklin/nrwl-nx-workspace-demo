@@ -30,7 +30,9 @@
       "@nrwl-nx-workspace-demo/stringutils": ["libs/stringutils/src/index.ts"],
       "@nrwl-nx-workspace-demo/tab-nav": ["libs/tab-nav/src/index.ts"],
       "@nrwl-nx-workspace-demo/class-toggle-on-change": ["libs/class-toggle-on-change/src/index.ts"],
-      "@nrwl-nx-workspace-demo/app-highcharts-static": ["libs/app-highcharts-static/src/index.ts"]
+      "@nrwl-nx-workspace-demo/app-highcharts-static": ["libs/app-highcharts-static/src/index.ts"],
+      "@nrwl-nx-workspace-demo/name-tag-element": ["libs/name-tag-element/src/index.ts"],
+      "@nrwl-nx-workspace-demo/elements-sandbox": ["libs/elements-sandbox/src/index.ts"]
     }
   },
   "include": ["apps/**/*", "libs/**/*"],

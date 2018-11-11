@@ -23,7 +23,12 @@
               "node_modules/swiper/dist/css/swiper.css",
               "apps/app1/src/styles.scss"
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.js"]
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -655,6 +660,52 @@
               "libs/app-highcharts-static/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "name-tag-element": {
+      "root": "libs/name-tag-element",
+      "sourceRoot": "libs/name-tag-element/src",
+      "projectType": "library",
+      "prefix": "nrwl-nx-workspace-demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/name-tag-element/tsconfig.lib.json", "libs/name-tag-element/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/name-tag-element/jest.config.js",
+            "tsConfig": "libs/name-tag-element/tsconfig.spec.json",
+            "setupFile": "libs/name-tag-element/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "elements-sandbox": {
+      "root": "libs/elements-sandbox",
+      "sourceRoot": "libs/elements-sandbox/src",
+      "projectType": "library",
+      "prefix": "nrwl-nx-workspace-demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/elements-sandbox/tsconfig.lib.json", "libs/elements-sandbox/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/elements-sandbox/jest.config.js",
+            "tsConfig": "libs/elements-sandbox/tsconfig.spec.json",
+            "setupFile": "libs/elements-sandbox/src/test-setup.ts"
           }
         }
       }

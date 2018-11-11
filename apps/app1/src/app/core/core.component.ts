@@ -20,7 +20,8 @@ export class CoreComponent implements OnInit {
       { value: `${COREROUTEBASESPACE}game`, display: 'Apollo Game' },
       { value: `${COREROUTEBASESPACE}learn-graphql`, display: 'Learn Graphql' },
       { value: `${COREROUTEBASESPACE}learn-swiper`, display: 'Learn Swiper' },
-      { value: `${COREROUTEBASESPACE}report`, display: 'Report' }
+      { value: `${COREROUTEBASESPACE}report`, display: 'Report' },
+      { value: `${COREROUTEBASESPACE}elements-sandbox`, display: 'Elements' }
     ];
   }
 

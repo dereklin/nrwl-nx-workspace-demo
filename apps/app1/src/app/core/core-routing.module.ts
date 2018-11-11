@@ -37,6 +37,10 @@ const routes: Routes = [
         path: 'report',
         loadChildren: '../report/report.module#ReportModule'
       },
+      {
+        path: 'elements-sandbox',
+        loadChildren: '@nrwl-nx-workspace-demo/elements-sandbox/src/lib/elements-sandbox.module#ElementsSandboxModule'
+      },
       { path: 'not-found', loadChildren: '@nrwl-nx-workspace-demo/not-found/src/lib/not-found.module#NotFoundModule' },
       {
         path: '**',
