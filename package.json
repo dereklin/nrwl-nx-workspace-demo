@@ -40,7 +40,8 @@
     "dyson:watch": "nodemon --watch dyson --exec dyson dyson",
     "help": "./node_modules/.bin/nx help",
     "storybook": "start-storybook -p 6006",
-    "affected:test": "./node_modules/.bin/nx affected:test"
+    "affected:test": "./node_modules/.bin/nx affected:test",
+    "postinstall": "npm run build:app1"
   },
   "private": true,
   "dependencies": {
