@@ -1,6 +1,6 @@
 # nrwl-nx-workspace-demo
 
-## [demo](https://tranquil-harbor-5498.herokuapp.com)
+## <a href="https://tranquil-harbor-5498.herokuapp.com" target="_blank">Demo</a>
 
 ## Nx
 
