@@ -89,6 +89,7 @@
     "chance": "1.0.16",
     "chroma-js": "1.4.0",
     "classlist.js": "1.1.20150312",
+    "compression": "^1.7.1",
     "core-js": "2.5.7",
     "cors": "2.8.4",
     "d3": "5.7.0",
