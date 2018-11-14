@@ -41,7 +41,8 @@ export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
   }
 }
 
-export function stateSetter(myReducer: ActionReducer<any>): ActionReducer<any> {
+/* export */
+function stateSetter(myReducer: ActionReducer<any>): ActionReducer<any> {
   return (state, action: any) => {
     if (action.type === 'SET_ROOT_STATE') {
       return action.payload;
