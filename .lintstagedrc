@@ -1,0 +1,7 @@
+{
+  "{apps,libs}/**/*.{ts,json,md,scss}": [
+    "npm run affected:lint -- --uncommitted --fix --parallel",
+    "npm run format:write -- --uncommitted",
+    "git add"
+  ]
+}
