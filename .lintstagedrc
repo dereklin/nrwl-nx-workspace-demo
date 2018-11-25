@@ -1,5 +1,8 @@
 {
   "*": [
     "pretty-quick --staged"
-  ]
+  ],
+  "linters": {
+    "*.ts": "npm run affected:lint  -- --uncommitted --fix --parallel"
+  }
 }
