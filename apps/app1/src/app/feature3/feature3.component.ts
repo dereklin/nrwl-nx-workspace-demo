@@ -20,7 +20,7 @@ export class Feature3Component implements OnInit, AfterViewInit {
   public feature3: any;
 
   constructor(private route: ActivatedRoute, private backgroundColorRandomizer: BackgroundColorRandomizer) {
-    this.test = 'test';
+    this.test = 'test2';
   }
 
   private movieStore: any[];
