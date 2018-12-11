@@ -73,6 +73,7 @@
     "@nguniversal/module-map-ngfactory-loader": "7.0.2",
     "@nrwl/nx": "7.1.1",
     "@swimlane/ngx-charts": "10.0.0",
+    "@webcomponents/custom-elements": "1.2.1",
     "ag-grid": "18.1.2",
     "ag-grid-angular": "19.1.2",
     "ag-grid-enterprise": "19.1.4",
@@ -95,6 +96,7 @@
     "core-js": "2.6.0",
     "cors": "2.8.5",
     "d3": "5.7.0",
+    "document-register-element": "1.13.1",
     "express": "4.16.4",
     "faker": "4.1.0",
     "flatpickr": "4.5.2",
@@ -132,8 +134,7 @@
     "tachyons": "4.11.1",
     "web-animations-js": "2.3.1",
     "xlsx": "0.14.1",
-    "zone.js": "0.8.26",
-    "document-register-element": "1.13.1"
+    "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.11.2",

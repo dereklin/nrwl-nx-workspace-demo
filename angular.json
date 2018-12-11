@@ -24,10 +24,7 @@
               "apps/app1/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              {
-                "input": "node_modules/document-register-element/build/document-register-element.js"
-              }
+              "node_modules/jquery/dist/jquery.js"
             ]
           },
           "configurations": {
