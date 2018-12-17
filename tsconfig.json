@@ -8,33 +8,90 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["esnext", "es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "esnext",
+      "es2017",
+      "dom"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@nrwl-nx-workspace-demo/*": ["libs/*"],
-      "@nrwl-nx-workspace-demo/apollo-game": ["libs/apollo-game/src/index.ts"],
-      "@nrwl-nx-workspace-demo/app-apollo": ["libs/app-apollo/src/index.ts"],
-      "@nrwl-nx-workspace-demo/app-interfaces": ["libs/app-interfaces/src/index.ts"],
-      "@nrwl-nx-workspace-demo/background-color-randomizer": ["libs/background-color-randomizer/src/index.ts"],
-      "@nrwl-nx-workspace-demo/dropdown": ["libs/dropdown/src/index.ts"],
-      "@nrwl-nx-workspace-demo/dummy1-service": ["libs/dummy1-service/src/index.ts"],
-      "@nrwl-nx-workspace-demo/fancy-box": ["libs/fancy-box/src/index.ts"],
-      "@nrwl-nx-workspace-demo/http-client-service": ["libs/http-client-service/src/index.ts"],
-      "@nrwl-nx-workspace-demo/learn-graphql": ["libs/learn-graphql/src/index.ts"],
-      "@nrwl-nx-workspace-demo/learn-swiper": ["libs/learn-swiper/src/index.ts"],
-      "@nrwl-nx-workspace-demo/movie-resolver": ["libs/movie-resolver/src/index.ts"],
-      "@nrwl-nx-workspace-demo/not-found": ["libs/not-found/src/index.ts"],
-      "@nrwl-nx-workspace-demo/session-resolver": ["libs/session-resolver/src/index.ts"],
-      "@nrwl-nx-workspace-demo/simple-http-service": ["libs/simple-http-service/src/index.ts"],
-      "@nrwl-nx-workspace-demo/stringutils": ["libs/stringutils/src/index.ts"],
-      "@nrwl-nx-workspace-demo/tab-nav": ["libs/tab-nav/src/index.ts"],
-      "@nrwl-nx-workspace-demo/class-toggle-on-change": ["libs/class-toggle-on-change/src/index.ts"],
-      "@nrwl-nx-workspace-demo/highcharts-config": ["libs/highcharts-config/src/index.ts"],
-      "@nrwl-nx-workspace-demo/name-tag-element": ["libs/name-tag-element/src/index.ts"],
-      "@nrwl-nx-workspace-demo/elements-sandbox": ["libs/elements-sandbox/src/index.ts"]
+      "@nrwl-nx-workspace-demo/*": [
+        "libs/*"
+      ],
+      "@nrwl-nx-workspace-demo/apollo-game": [
+        "libs/apollo-game/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/app-apollo": [
+        "libs/app-apollo/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/app-interfaces": [
+        "libs/app-interfaces/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/background-color-randomizer": [
+        "libs/background-color-randomizer/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/dropdown": [
+        "libs/dropdown/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/dummy1-service": [
+        "libs/dummy1-service/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/fancy-box": [
+        "libs/fancy-box/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/http-client-service": [
+        "libs/http-client-service/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/learn-graphql": [
+        "libs/learn-graphql/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/learn-swiper": [
+        "libs/learn-swiper/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/movie-resolver": [
+        "libs/movie-resolver/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/not-found": [
+        "libs/not-found/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/session-resolver": [
+        "libs/session-resolver/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/simple-http-service": [
+        "libs/simple-http-service/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/stringutils": [
+        "libs/stringutils/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/tab-nav": [
+        "libs/tab-nav/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/class-toggle-on-change": [
+        "libs/class-toggle-on-change/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/highcharts-config": [
+        "libs/highcharts-config/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/name-tag-element": [
+        "libs/name-tag-element/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/elements-sandbox": [
+        "libs/elements-sandbox/src/index.ts"
+      ],
+      "@nrwl-nx-workspace-demo/algorithms": [
+        "libs/algorithms/src/index.ts"
+      ]
     }
   },
-  "include": ["apps/**/*", "libs/**/*"],
-  "exclude": ["node_modules", "tmp"]
+  "include": [
+    "apps/**/*",
+    "libs/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
