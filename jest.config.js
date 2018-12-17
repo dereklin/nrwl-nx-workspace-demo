@@ -1,5 +1,12 @@
 module.exports = {
   preset: 'jest-preset-angular',
+  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
+  transform: {
+    '^.+\\.(ts|js|html)$': 'jest-preset-angular/preprocessor.js'
+  },
+  resolver: '@nrwl/builders/plugins/jest/resolver',
+  moduleFileExtensions: ['ts', 'js', 'html'],
+  coverageReporters: ['html'],
   setupTestFrameworkScriptFile: '<rootDir>/jest/setupJest.ts',
   setupFiles: ['jest-canvas-mock'],
   globals: {
@@ -8,7 +15,6 @@ module.exports = {
     },
     __TRANSFORM_HTML__: true
   },
-  testResultsProcessor: './node_modules/jest-html-reporter',
   collectCoverageFrom: [
     'apps/**/src/**/*.ts',
     'libs/**/src/**/*.ts',
