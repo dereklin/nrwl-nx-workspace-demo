@@ -39,3 +39,9 @@ Object.defineProperty(window, 'getComputedStyle', {
     };
   }
 });
+
+Object.defineProperty(window, 'customElements', {
+  value: {
+    define: () => {}
+  }
+});

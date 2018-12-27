@@ -16,11 +16,10 @@ describe('ReportComponent', () => {
         SimpleChartModule,
         MatCardModule,
         HighchartsConfigModule.forRoot('highcharts', [
-          require('highcharts/highstock'),
-          require('highcharts/modules/treemap'),
-          // require('highcharts/modules/exporting'),
-          // require('highcharts/modules/export-data'),
-          require('highcharts/highcharts-more')
+          'highcharts/modules/treemap',
+          'highcharts/modules/exporting',
+          'highcharts/modules/export-data',
+          'highcharts/highcharts-more'
         ]),
         ChartModule
       ],
