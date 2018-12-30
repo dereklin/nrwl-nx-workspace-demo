@@ -1,5 +1,12 @@
 {
   "npmScope": "nrwl-nx-workspace-demo",
+  "implicitDependencies": {
+    "package.json": "*",
+    "angular.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
   "projects": {
     "app1": {
       "tags": []

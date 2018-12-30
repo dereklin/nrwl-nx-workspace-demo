@@ -10,7 +10,7 @@
     "build": "ng build",
     "test": "jest",
     "test:karma": "ng test",
-    "lint": "./node_modules/.bin/nx lint && ng lint",
+    "lint": "./node_modules/.bin/nx lint && npm run affected:lint -- --base=origin/master --head=HEAD --parallel",
     "webdriver-update": "webdriver-manager update",
     "e2e": "ng e2e",
     "e2e:app1": "npm run e2e -- --hmr --app=app1 --webdriver-update false",
