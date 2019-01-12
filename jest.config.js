@@ -32,11 +32,5 @@ module.exports = {
       lines: 60,
       statements: -20
     }
-  },
-  moduleNameMapper: {
-    '@nrwl-nx-workspace-demo/app-interfaces': '<rootDir>/libs/app-interfaces/src',
-    '@nrwl-nx-workspace-demo/app-tokens': '<rootDir>/libs/app-tokens/index.ts',
-    '@nrwl-nx-workspace-demo/(.*)': '<rootDir>/libs/$1/src/index.ts',
-    '@nrwl-nx-workspace-demo': '<rootDir>/libs'
   }
 };

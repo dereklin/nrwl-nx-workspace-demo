@@ -70,23 +70,11 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/builders:jest",
           "options": {
-            "main": "apps/app1/src/test.ts",
-            "karmaConfig": "apps/app1/karma.conf.js",
-            "polyfills": "apps/app1/src/polyfills.ts",
+            "jestConfig": "apps/app1/jest.config.js",
             "tsConfig": "apps/app1/tsconfig.spec.json",
-            "scripts": [],
-            "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/tachyons/css/tachyons.css",
-              "node_modules/swiper/dist/css/swiper.css",
-              "apps/app1/src/styles.scss"
-            ],
-            "assets": [
-              "apps/app1/src/assets",
-              "apps/app1/src/favicon.ico"
-            ]
+            "setupFile": "apps/app1/src/test-setup.ts"
           }
         },
         "lint": {
