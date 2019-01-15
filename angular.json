@@ -21,8 +21,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/tachyons/css/tachyons.css",
               "node_modules/swiper/dist/css/swiper.css",
-              "apps/app1/src/styles.scss"
+              "apps/app1/src/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/app1/src/styles"]
+            },
+
             "scripts": ["node_modules/jquery/dist/jquery.js"]
           },
           "configurations": {
@@ -736,7 +740,11 @@
             "polyfills": "apps/app2/src/polyfills.ts",
             "tsConfig": "apps/app2/tsconfig.app.json",
             "assets": ["apps/app2/src/favicon.ico", "apps/app2/src/assets"],
-            "styles": ["apps/app2/src/styles.scss"],
+            "styles": ["apps/app2/src/styles/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/app2/src/styles"]
+            },
+
             "scripts": []
           },
           "configurations": {

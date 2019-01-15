@@ -7,6 +7,7 @@
     "ng-high-mem": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng",
     "start": "ng serve",
     "start:app1": "npm start -- --hmr --project=app1 --open",
+    "start:app2": "npm start -- --hmr --project=app2 --open",
     "app": "ng serve --hmr --open --project",
     "start-app": "node ./scripts/start-app.js ng serve --hmr --open --project",
     "build": "ng build",
