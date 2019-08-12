@@ -10,7 +10,7 @@ describe('AppApolloModule', () => {
 
   beforeEach(() => {
     ngZone = {
-      run: jest.fn(cb => cb()),
+      run: jest.fn((cb) => cb()),
     } as any;
   });
   it('should work', () => {
