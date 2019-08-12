@@ -4,6 +4,9 @@
     "outDir": "../../dist/out-tsc/apps/app1",
     "module": "es2015"
   },
+  "angularCompilerOptions": {
+    "enableIvy": false
+  },
   "include": [
     "**/*.ts",
     "../../libs/not-found/src/index.ts",
@@ -13,5 +16,8 @@
     "../../libs/learn-swiper/src/index.ts",
     "../../libs/elements-sandbox/src/index.ts"
   ],
-  "exclude": ["**/*.spec.ts", "src/test.ts"]
+  "exclude": [
+    "**/*.spec.ts",
+    "src/test.ts"
+  ]
 }

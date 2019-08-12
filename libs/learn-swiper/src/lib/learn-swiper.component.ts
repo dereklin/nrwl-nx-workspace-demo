@@ -44,12 +44,12 @@ export class LearnSwiperComponent {
     hideOnClick: false
   };
 
-  @ViewChild(SwiperComponent)
+  @ViewChild(SwiperComponent, { static: true })
   public componentRef: SwiperComponent;
-  @ViewChild(SwiperDirective)
+  @ViewChild(SwiperDirective, { static: true })
   public directiveRef: SwiperDirective;
 
-  constructor() {}
+  constructor() { }
 
   public toggleType() {
     this.type = this.type === 'component' ? 'directive' : 'component';

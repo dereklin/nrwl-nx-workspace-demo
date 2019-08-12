@@ -49,7 +49,9 @@ import '@webcomponents/custom-elements/custom-elements.min';
 
 /** Evergreen browsers require these. */
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-import 'core-js/es7/reflect';
+// import 'core-js/es7/reflect';
+// https://github.com/zloirock/core-js/issues/412
+import 'core-js/proposals/reflect-metadata';
 
 /**
  * Required to support Web Animations `@angular/platform-browser/animations`.

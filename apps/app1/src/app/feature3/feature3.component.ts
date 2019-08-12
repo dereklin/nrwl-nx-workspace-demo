@@ -16,7 +16,7 @@ export class Feature3Component implements OnInit, AfterViewInit {
   };
   public movieData: any = [];
 
-  @ViewChild('feature3')
+  @ViewChild('feature3', { static: true })
   public feature3: any;
 
   constructor(private route: ActivatedRoute, private backgroundColorRandomizer: BackgroundColorRandomizer) {

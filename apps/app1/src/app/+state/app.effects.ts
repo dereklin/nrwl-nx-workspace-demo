@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions } from '@ngrx/effects';
-import { DataPersistence } from '@nrwl/nx';
+
+import { DataPersistence } from '@nrwl/angular';
 
 import { AppState } from './app.interfaces';
 import { LoadData, DataLoaded } from './app.actions';
@@ -21,5 +22,5 @@ export class AppEffects {
     }
   });
 
-  constructor(private actions: Actions, private dataPersistence: DataPersistence<AppState>) {}
+  constructor(private actions: Actions, private dataPersistence: DataPersistence<AppState>) { }
 }

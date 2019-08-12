@@ -1,3 +1,5 @@
 {
-  
+  "{apps,libs}/**/*.{ts,json,md,scss}": [
+    "git add"
+  ]  
 }

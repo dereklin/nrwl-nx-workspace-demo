@@ -6,7 +6,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { Store, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HighchartsConfigModule } from '@nrwl-nx-workspace-demo/highcharts-config';
-import { NxModule } from '@nrwl/nx';
+import { NxModule } from '@nrwl/angular';
 import { take } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
@@ -29,7 +29,7 @@ interface StoreType {
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),
-    StoreRouterConnectingModule,
+    StoreRouterConnectingModule.forRoot(),
     environment.production ? [] : StoreDevtoolsModule.instrument(),
     HighchartsConfigModule.forRoot('highcharts', [
       'highcharts/modules/treemap',
@@ -43,7 +43,7 @@ interface StoreType {
   providers: [...fromProviders.providers]
 })
 export class AppModule {
-  constructor(private store: Store<AppState>, public appRef: ApplicationRef) {}
+  constructor(private store: Store<AppState>, public appRef: ApplicationRef) { }
   public hmrOnInit(store: StoreType) {
     if (!store || !store.state) {
       return;
