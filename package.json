@@ -45,7 +45,6 @@
     "help": "./node_modules/.bin/nx help",
     "storybook": "start-storybook -p 6006",
     "affected:test": "./node_modules/.bin/nx affected:test",
-    "postinstall": "npm run build:app1",
     "jest:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "debug-chrome-url": "chrome://inspect/#devices"
   },
