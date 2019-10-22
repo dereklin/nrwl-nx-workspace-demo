@@ -16,4 +16,4 @@ CN = localhost
 subjectAltName = @alt_names
 [alt_names]
 DNS.1 = localhost
-DNS.2 = localhost.vmware.com
+DNS.2 = localhost.domain.com
