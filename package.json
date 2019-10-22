@@ -9,7 +9,7 @@
     "start:app1": "npm start -- --hmr --project=app1 --open --port 4501",
     "start:app2": "npm start -- --hmr --project=app2 --open --port 4502",
 
-    "start:app1:ssl": "npm start -- --hmr --project=app1 --open --port 4501 --ssl --ssl-key ./localhost.key  --ssl-cert ./localhost.crt",
+    "start:app1:ssl": "npm start -- --hmr --project=app1 --open --port 4501 --ssl --ssl-key ./localhost.key  --ssl-cert ./localhost.crt --disable-host-check",
 
     "app": "ng serve --hmr --open --project",
     "start-app": "node ./scripts/start-app.js ng serve --hmr --open --project",
